@@ -19,6 +19,9 @@
 		AFCD147020CA5F6A00137456 /* StarWarsCharactersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD146F20CA5F6A00137456 /* StarWarsCharactersTests.swift */; };
 		AFCD147B20CA5F6A00137456 /* StarWarsCharactersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD147A20CA5F6A00137456 /* StarWarsCharactersUITests.swift */; };
 		AFCD148D20CA625100137456 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AFCD148C20CA625100137456 /* .gitignore */; };
+		AFCD149720CA657F00137456 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD149620CA657F00137456 /* Network.swift */; };
+		AFCD149920CA658C00137456 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD149820CA658C00137456 /* NetworkError.swift */; };
+		AFCD149B20CA659B00137456 /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD149A20CA659B00137456 /* NetworkMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		AFCD147A20CA5F6A00137456 /* StarWarsCharactersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCharactersUITests.swift; sourceTree = "<group>"; };
 		AFCD147C20CA5F6A00137456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFCD148C20CA625100137456 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AFCD149620CA657F00137456 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		AFCD149820CA658C00137456 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		AFCD149A20CA659B00137456 /* NetworkMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
 		BBB849286D4B58EEE52EE16B /* Pods-StarWarsCharacters.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsCharacters.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StarWarsCharacters/Pods-StarWarsCharacters.debug.xcconfig"; sourceTree = "<group>"; };
 		BD588D7A65F7C84EDBA761E8 /* Pods_StarWarsCharactersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWarsCharactersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9ECC0B92B5961A348A5436F /* Pods_StarWarsCharactersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWarsCharactersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +148,12 @@
 		AFCD145620CA5F6A00137456 /* StarWarsCharacters */ = {
 			isa = PBXGroup;
 			children = (
+				AFCD149420CA654100137456 /* Model */,
+				AFCD149320CA654100137456 /* Controller */,
+				AFCD149020CA654000137456 /* View */,
+				AFCD149520CA654100137456 /* ViewModels */,
+				AFCD149220CA654100137456 /* Network */,
+				AFCD149120CA654000137456 /* Extension */,
 				AFCD145720CA5F6A00137456 /* AppDelegate.swift */,
 				AFCD145920CA5F6A00137456 /* ViewController.swift */,
 				AFCD145B20CA5F6A00137456 /* Main.storyboard */,
@@ -169,6 +181,51 @@
 				AFCD147C20CA5F6A00137456 /* Info.plist */,
 			);
 			path = StarWarsCharactersUITests;
+			sourceTree = "<group>";
+		};
+		AFCD149020CA654000137456 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AFCD149120CA654000137456 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		AFCD149220CA654100137456 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AFCD149620CA657F00137456 /* Network.swift */,
+				AFCD149A20CA659B00137456 /* NetworkMethod.swift */,
+				AFCD149820CA658C00137456 /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		AFCD149320CA654100137456 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AFCD149420CA654100137456 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AFCD149520CA654100137456 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,8 +523,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFCD145A20CA5F6A00137456 /* ViewController.swift in Sources */,
+				AFCD149B20CA659B00137456 /* NetworkMethod.swift in Sources */,
 				AFCD146020CA5F6A00137456 /* StarWarsCharacters.xcdatamodeld in Sources */,
+				AFCD149720CA657F00137456 /* Network.swift in Sources */,
 				AFCD145820CA5F6A00137456 /* AppDelegate.swift in Sources */,
+				AFCD149920CA658C00137456 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
