@@ -1,7 +1,7 @@
 # StarWarsCharacters
 
 Specification
-1)Please build an IPhone app that uses the free STAR WARS api https://swapi.co/
+1) Please build an IPhone app that uses the free STAR WARS api https://swapi.co/
 
 Guidelines
 1) shows a list view of all Star Wars characters (people) with their names and eye-color.
