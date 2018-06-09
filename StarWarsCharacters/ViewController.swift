@@ -9,17 +9,32 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.methodService()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
+    func methodService() {
+        let service : CharactersRouter! = CharactersRouter()
+        service.fetchConverter { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let converter) :
+                    print(converter)
+                    break
+                case .failure(let error) :
+                    print("Parser error \(error)")
+                    break
+                }
+            }
+        }
+    }
 }
 
