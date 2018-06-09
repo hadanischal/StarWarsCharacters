@@ -9,12 +9,12 @@
 import Foundation
 
 final class NetworkService {
-    func loadData(urlString: String, session: URLSession = URLSession(configuration: .default), completion: @escaping (Result<Data, ErrorResult>) -> Void) -> URLSessionTask? {
+    func loadData(url: URL, session: URLSession = URLSession(configuration: .default), completion: @escaping (Result<Data, ErrorResult>) -> Void) -> URLSessionTask? {
         
-        guard let url = URL(string: urlString) else {
-            completion(.failure(.network(string: "Wrong url format")))
-            return nil
-        }
+//        guard let url = URL(string: urlString) else {
+//            completion(.failure(.network(string: "Wrong url format")))
+//            return nil
+//        }
         var request = NetworkMethod.request(method: .GET, url: url)
         if let reachability = Reachability(), !reachability.isReachable {
             request.cachePolicy = .returnCacheDataDontLoad
@@ -25,7 +25,6 @@ final class NetworkService {
                 return
             }
             if let data = data {
-                print(data)
                 completion(.success(data))
             }
         }
