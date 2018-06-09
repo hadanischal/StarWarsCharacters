@@ -12,6 +12,7 @@
 		AF14B30420CB681A00C2A62A /* ParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B30320CB681A00C2A62A /* ParserHelper.swift */; };
 		AF14B30820CB691900C2A62A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B30720CB691900C2A62A /* Reachability.swift */; };
 		AF14B30A20CB694600C2A62A /* ReachabilityError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B30920CB694600C2A62A /* ReachabilityError.swift */; };
+		AF14B30E20CB6B3B00C2A62A /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B30D20CB6B3B00C2A62A /* NetworkMethod.swift */; };
 		AFCD145820CA5F6A00137456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD145720CA5F6A00137456 /* AppDelegate.swift */; };
 		AFCD145A20CA5F6A00137456 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD145920CA5F6A00137456 /* ViewController.swift */; };
 		AFCD145D20CA5F6A00137456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFCD145B20CA5F6A00137456 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		AF14B30320CB681A00C2A62A /* ParserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserHelper.swift; sourceTree = "<group>"; };
 		AF14B30720CB691900C2A62A /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		AF14B30920CB694600C2A62A /* ReachabilityError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityError.swift; sourceTree = "<group>"; };
+		AF14B30D20CB6B3B00C2A62A /* NetworkMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
 		AFCD145420CA5F6A00137456 /* StarWarsCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCD145720CA5F6A00137456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFCD145920CA5F6A00137456 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		AF14B2FD20CB678100C2A62A /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				AF14B30D20CB6B3B00C2A62A /* NetworkMethod.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				AF14B30A20CB694600C2A62A /* ReachabilityError.swift in Sources */,
 				AF14B30020CB67B400C2A62A /* Result.swift in Sources */,
 				AFCD145820CA5F6A00137456 /* AppDelegate.swift in Sources */,
+				AF14B30E20CB6B3B00C2A62A /* NetworkMethod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
