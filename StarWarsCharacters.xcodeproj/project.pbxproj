@@ -13,6 +13,8 @@
 		AF14B30820CB691900C2A62A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B30720CB691900C2A62A /* Reachability.swift */; };
 		AF14B30A20CB694600C2A62A /* ReachabilityError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B30920CB694600C2A62A /* ReachabilityError.swift */; };
 		AF14B30E20CB6B3B00C2A62A /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B30D20CB6B3B00C2A62A /* NetworkMethod.swift */; };
+		AF14B31020CB7BA900C2A62A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B30F20CB7BA900C2A62A /* NetworkService.swift */; };
+		AF14B31220CB7C6800C2A62A /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B31120CB7C6800C2A62A /* NetworkHandler.swift */; };
 		AFCD145820CA5F6A00137456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD145720CA5F6A00137456 /* AppDelegate.swift */; };
 		AFCD145A20CA5F6A00137456 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD145920CA5F6A00137456 /* ViewController.swift */; };
 		AFCD145D20CA5F6A00137456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFCD145B20CA5F6A00137456 /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 		AF14B30720CB691900C2A62A /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		AF14B30920CB694600C2A62A /* ReachabilityError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityError.swift; sourceTree = "<group>"; };
 		AF14B30D20CB6B3B00C2A62A /* NetworkMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
+		AF14B30F20CB7BA900C2A62A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		AF14B31120CB7C6800C2A62A /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		AFCD145420CA5F6A00137456 /* StarWarsCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCD145720CA5F6A00137456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFCD145920CA5F6A00137456 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 		AF14B2FD20CB678100C2A62A /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				AF14B30F20CB7BA900C2A62A /* NetworkService.swift */,
+				AF14B31120CB7C6800C2A62A /* NetworkHandler.swift */,
 				AF14B30D20CB6B3B00C2A62A /* NetworkMethod.swift */,
 			);
 			path = Network;
@@ -372,6 +378,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF14B31020CB7BA900C2A62A /* NetworkService.swift in Sources */,
+				AF14B31220CB7C6800C2A62A /* NetworkHandler.swift in Sources */,
 				AF14B30820CB691900C2A62A /* Reachability.swift in Sources */,
 				AFCD145A20CA5F6A00137456 /* ViewController.swift in Sources */,
 				AF14B30220CB67C900C2A62A /* ErrorResult.swift in Sources */,
