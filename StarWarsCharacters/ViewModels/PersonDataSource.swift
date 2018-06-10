@@ -24,12 +24,9 @@ class PersonDataSource : GenericDataSource<PersonModel>, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell", for: indexPath) as! PersonCell
-        
-//        let currencyRate = self.data.value[indexPath.row]
-//        cell.currencyRate = currencyRate
-        
+        let data = self.data.value[indexPath.row]
+        cell.personModel = data
         return cell
     }
 }
