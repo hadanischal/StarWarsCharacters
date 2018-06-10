@@ -10,6 +10,13 @@ import UIKit
 
 class PersonViewController: UIViewController {
     
+    @IBOutlet weak var tableView : UITableView!
+    let dataSource = PersonDataSource()
+    lazy var viewModel : PersonViewModel = {
+        let viewModel = PersonViewModel(dataSource: dataSource)
+        return viewModel
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.methodService()
