@@ -42,7 +42,9 @@ class PersonViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.refresh, target: self, action: #selector(actionRefresh))
     }
     
-    @objc func actionRefresh() {}    
+    @objc func actionRefresh() {
+        self.viewModel.setupServiceCall()
+    }
 }
 
 // MARK: - TableViewDelegate Setup
@@ -54,7 +56,7 @@ extension PersonViewController : UITableViewDelegate{
         return 100
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return 60
     }
 }
 
