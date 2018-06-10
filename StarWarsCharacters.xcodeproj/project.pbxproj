@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF1444A520CCBB55005FDFAD /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1444A420CCBB55005FDFAD /* PersonViewController.swift */; };
+		AF1444A720CCBC59005FDFAD /* DynamicValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1444A620CCBC59005FDFAD /* DynamicValue.swift */; };
 		AF14B30020CB67B400C2A62A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B2FF20CB67B400C2A62A /* Result.swift */; };
 		AF14B30220CB67C900C2A62A /* ErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B30120CB67C900C2A62A /* ErrorResult.swift */; };
 		AF14B30420CB681A00C2A62A /* ParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B30320CB681A00C2A62A /* ParserHelper.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		AF1444A420CCBB55005FDFAD /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		AF1444A620CCBC59005FDFAD /* DynamicValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicValue.swift; sourceTree = "<group>"; };
 		AF14B2FF20CB67B400C2A62A /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		AF14B30120CB67C900C2A62A /* ErrorResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResult.swift; sourceTree = "<group>"; };
 		AF14B30320CB681A00C2A62A /* ParserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserHelper.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				AF14B30620CB690600C2A62A /* Reachability */,
+				AF1444A620CCBC59005FDFAD /* DynamicValue.swift */,
 				AF14B31D20CBA0E100C2A62A /* Utility.swift */,
 			);
 			path = Utils;
@@ -419,6 +422,7 @@
 				AFCD145A20CA5F6A00137456 /* ViewController.swift in Sources */,
 				AF14B30220CB67C900C2A62A /* ErrorResult.swift in Sources */,
 				AF14B30420CB681A00C2A62A /* ParserHelper.swift in Sources */,
+				AF1444A720CCBC59005FDFAD /* DynamicValue.swift in Sources */,
 				AF14B31A20CB920F00C2A62A /* APIManager.swift in Sources */,
 				AFCD146020CA5F6A00137456 /* StarWarsCharacters.xcdatamodeld in Sources */,
 				AF14B30A20CB694600C2A62A /* ReachabilityError.swift in Sources */,

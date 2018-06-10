@@ -9,27 +9,31 @@
 import UIKit
 
 class PersonViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.methodService()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func methodService() {
+        let service : CharactersRouter! = CharactersRouter()
+        service.fetchConverter { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let converter) :
+                    print(converter)
+                    break
+                case .failure(let error) :
+                    print("Parser error \(error)")
+                    break
+                }
+            }
+        }
     }
-    */
-
 }
