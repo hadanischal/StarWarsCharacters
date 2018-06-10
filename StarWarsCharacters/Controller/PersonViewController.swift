@@ -19,28 +19,20 @@ class PersonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.methodService()
+        self.setupViewModel()
+        self.viewModel.setupServiceCall()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    func methodService() {
-        let service : CharactersRouter! = CharactersRouter()
-        service.fetchConverter { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let converter) :
-                    print(converter)
-                    break
-                case .failure(let error) :
-                    print("Parser error \(error)")
-                    break
-                }
-            }
+    func setupViewModel() {
+        self.tableView.dataSource = self.dataSource
+        self.dataSource.data.addAndNotify(observer: self) { [weak self] _ in
+            self?.tableView.reloadData()
+        }
+        self.viewModel.onErrorHandling = { [weak self] error in
+            DefaultWireframe().presentAlert(self!, title: "An error occured", message: "Oops, something went wrong!")
         }
     }
 }
+
+
+
