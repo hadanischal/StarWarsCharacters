@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		AF1444A520CCBB55005FDFAD /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1444A420CCBB55005FDFAD /* PersonViewController.swift */; };
 		AF1444A720CCBC59005FDFAD /* DynamicValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1444A620CCBC59005FDFAD /* DynamicValue.swift */; };
+		AF1444AA20CCC589005FDFAD /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1444A920CCC589005FDFAD /* PersonViewModel.swift */; };
+		AF1444AD20CCC716005FDFAD /* PersonDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1444AC20CCC715005FDFAD /* PersonDataSource.swift */; };
+		AF1444AF20CCC85F005FDFAD /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1444AE20CCC85F005FDFAD /* PersonCell.swift */; };
 		AF14B30020CB67B400C2A62A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B2FF20CB67B400C2A62A /* Result.swift */; };
 		AF14B30220CB67C900C2A62A /* ErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B30120CB67C900C2A62A /* ErrorResult.swift */; };
 		AF14B30420CB681A00C2A62A /* ParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B30320CB681A00C2A62A /* ParserHelper.swift */; };
@@ -53,6 +56,9 @@
 /* Begin PBXFileReference section */
 		AF1444A420CCBB55005FDFAD /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		AF1444A620CCBC59005FDFAD /* DynamicValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicValue.swift; sourceTree = "<group>"; };
+		AF1444A920CCC589005FDFAD /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
+		AF1444AC20CCC715005FDFAD /* PersonDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDataSource.swift; sourceTree = "<group>"; };
+		AF1444AE20CCC85F005FDFAD /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		AF14B2FF20CB67B400C2A62A /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		AF14B30120CB67C900C2A62A /* ErrorResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResult.swift; sourceTree = "<group>"; };
 		AF14B30320CB681A00C2A62A /* ParserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserHelper.swift; sourceTree = "<group>"; };
@@ -245,6 +251,7 @@
 		AFCD149020CA654000137456 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AF1444AE20CCC85F005FDFAD /* PersonCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -276,6 +283,8 @@
 		AFCD149520CA654100137456 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				AF1444A920CCC589005FDFAD /* PersonViewModel.swift */,
+				AF1444AC20CCC715005FDFAD /* PersonDataSource.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -421,7 +430,9 @@
 				AF14B30820CB691900C2A62A /* Reachability.swift in Sources */,
 				AFCD145A20CA5F6A00137456 /* ViewController.swift in Sources */,
 				AF14B30220CB67C900C2A62A /* ErrorResult.swift in Sources */,
+				AF1444AF20CCC85F005FDFAD /* PersonCell.swift in Sources */,
 				AF14B30420CB681A00C2A62A /* ParserHelper.swift in Sources */,
+				AF1444AA20CCC589005FDFAD /* PersonViewModel.swift in Sources */,
 				AF1444A720CCBC59005FDFAD /* DynamicValue.swift in Sources */,
 				AF14B31A20CB920F00C2A62A /* APIManager.swift in Sources */,
 				AFCD146020CA5F6A00137456 /* StarWarsCharacters.xcdatamodeld in Sources */,
@@ -433,6 +444,7 @@
 				AF14B31C20CB982F00C2A62A /* PersonModel.swift in Sources */,
 				AF14B31520CB83DF00C2A62A /* CharactersRouter.swift in Sources */,
 				AF14B30E20CB6B3B00C2A62A /* NetworkMethod.swift in Sources */,
+				AF1444AD20CCC716005FDFAD /* PersonDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
