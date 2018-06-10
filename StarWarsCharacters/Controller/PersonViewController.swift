@@ -19,6 +19,7 @@ class PersonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupUI()
         self.setupViewModel()
         self.viewModel.setupServiceCall()
     }
@@ -32,6 +33,16 @@ class PersonViewController: UIViewController {
             DefaultWireframe().presentAlert(self!, title: "An error occured", message: "Oops, something went wrong!")
         }
     }
+    
+    func setupUI() {
+        self.title = "Star Wars characters"
+        self.tableView.backgroundColor = ThemeColor.white
+        self.view.backgroundColor = ThemeColor.white
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.refresh, target: self, action: #selector(actionRefresh))
+    }
+    
+    @objc func actionRefresh() {}    
 }
 
 
