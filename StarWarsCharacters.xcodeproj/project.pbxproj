@@ -15,6 +15,11 @@
 		AF14B30E20CB6B3B00C2A62A /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B30D20CB6B3B00C2A62A /* NetworkMethod.swift */; };
 		AF14B31020CB7BA900C2A62A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B30F20CB7BA900C2A62A /* NetworkService.swift */; };
 		AF14B31220CB7C6800C2A62A /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B31120CB7C6800C2A62A /* NetworkHandler.swift */; };
+		AF14B31520CB83DF00C2A62A /* CharactersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B31420CB83DF00C2A62A /* CharactersRouter.swift */; };
+		AF14B31720CB84B500C2A62A /* CharactersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B31620CB84B500C2A62A /* CharactersModel.swift */; };
+		AF14B31A20CB920F00C2A62A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B31920CB920F00C2A62A /* APIManager.swift */; };
+		AF14B31C20CB982F00C2A62A /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B31B20CB982F00C2A62A /* PersonModel.swift */; };
+		AF14B31E20CBA0E100C2A62A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B31D20CBA0E100C2A62A /* Utility.swift */; };
 		AFCD145820CA5F6A00137456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD145720CA5F6A00137456 /* AppDelegate.swift */; };
 		AFCD145A20CA5F6A00137456 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD145920CA5F6A00137456 /* ViewController.swift */; };
 		AFCD145D20CA5F6A00137456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFCD145B20CA5F6A00137456 /* Main.storyboard */; };
@@ -52,6 +57,11 @@
 		AF14B30D20CB6B3B00C2A62A /* NetworkMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
 		AF14B30F20CB7BA900C2A62A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		AF14B31120CB7C6800C2A62A /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
+		AF14B31420CB83DF00C2A62A /* CharactersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRouter.swift; sourceTree = "<group>"; };
+		AF14B31620CB84B500C2A62A /* CharactersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersModel.swift; sourceTree = "<group>"; };
+		AF14B31920CB920F00C2A62A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		AF14B31B20CB982F00C2A62A /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
+		AF14B31D20CBA0E100C2A62A /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		AFCD145420CA5F6A00137456 /* StarWarsCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCD145720CA5F6A00137456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFCD145920CA5F6A00137456 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +107,7 @@
 		AF14B2FB20CB678100C2A62A /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				AF14B31820CB920000C2A62A /* APIManager */,
 				AF14B2FC20CB678100C2A62A /* Result */,
 				AF14B2FD20CB678100C2A62A /* Network */,
 				AF14B2FE20CB678100C2A62A /* Parser */,
@@ -135,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				AF14B30620CB690600C2A62A /* Reachability */,
+				AF14B31D20CBA0E100C2A62A /* Utility.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -146,6 +158,22 @@
 				AF14B30720CB691900C2A62A /* Reachability.swift */,
 			);
 			path = Reachability;
+			sourceTree = "<group>";
+		};
+		AF14B31320CB838000C2A62A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				AF14B31420CB83DF00C2A62A /* CharactersRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		AF14B31820CB920000C2A62A /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				AF14B31920CB920F00C2A62A /* APIManager.swift */,
+			);
+			path = APIManager;
 			sourceTree = "<group>";
 		};
 		AFCD144B20CA5F6A00137456 = {
@@ -177,6 +205,7 @@
 				AFCD149020CA654000137456 /* View */,
 				AFCD149520CA654100137456 /* ViewModels */,
 				AF14B2FB20CB678100C2A62A /* Service */,
+				AF14B31320CB838000C2A62A /* Router */,
 				AF14B30520CB68E200C2A62A /* Utils */,
 				AFCD149120CA654000137456 /* Extension */,
 				AFCD145720CA5F6A00137456 /* AppDelegate.swift */,
@@ -232,6 +261,8 @@
 		AFCD149420CA654100137456 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AF14B31620CB84B500C2A62A /* CharactersModel.swift */,
+				AF14B31B20CB982F00C2A62A /* PersonModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -384,10 +415,15 @@
 				AFCD145A20CA5F6A00137456 /* ViewController.swift in Sources */,
 				AF14B30220CB67C900C2A62A /* ErrorResult.swift in Sources */,
 				AF14B30420CB681A00C2A62A /* ParserHelper.swift in Sources */,
+				AF14B31A20CB920F00C2A62A /* APIManager.swift in Sources */,
 				AFCD146020CA5F6A00137456 /* StarWarsCharacters.xcdatamodeld in Sources */,
 				AF14B30A20CB694600C2A62A /* ReachabilityError.swift in Sources */,
 				AF14B30020CB67B400C2A62A /* Result.swift in Sources */,
+				AF14B31720CB84B500C2A62A /* CharactersModel.swift in Sources */,
 				AFCD145820CA5F6A00137456 /* AppDelegate.swift in Sources */,
+				AF14B31E20CBA0E100C2A62A /* Utility.swift in Sources */,
+				AF14B31C20CB982F00C2A62A /* PersonModel.swift in Sources */,
+				AF14B31520CB83DF00C2A62A /* CharactersRouter.swift in Sources */,
 				AF14B30E20CB6B3B00C2A62A /* NetworkMethod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
