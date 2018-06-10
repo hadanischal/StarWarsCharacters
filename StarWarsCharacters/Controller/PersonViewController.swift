@@ -45,5 +45,16 @@ class PersonViewController: UIViewController {
     @objc func actionRefresh() {}    
 }
 
-
+// MARK: - TableViewDelegate Setup
+extension PersonViewController : UITableViewDelegate{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+}
 
