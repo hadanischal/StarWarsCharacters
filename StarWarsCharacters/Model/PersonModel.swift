@@ -33,7 +33,7 @@ struct PersonModel{
          self.skinColor = dictionary["skin_color"] as? String*/
         self.eyeColor = dictionary["eye_color"] as? String
         self.birthYear = dictionary["birth_year"] as? String ?? "unknown"
-        self.gender = dictionary["surface_water"] as? String ?? "unknown"
+        self.gender = dictionary["gender"] as? String ?? "unknown"
         self.homeworld = dictionary["homeworld"] as? String ?? "unknown"
         self.films = dictionary["films"] as? [String] ?? []
         /*self.species = dictionary["species"] as? [String]

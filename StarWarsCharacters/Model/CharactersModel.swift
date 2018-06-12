@@ -10,9 +10,12 @@ import Foundation
 
 struct CharactersModel {
     let next: String?
-   // let previous: String?
+    // let previous: String?
     let count: Int?
     let results: [PersonModel]
+    let eyeColorArray: [String]
+    let filteredResults: [String : [PersonModel]]
+
 }
 
 extension CharactersModel : Parceable {
@@ -27,10 +30,31 @@ extension CharactersModel : Parceable {
                 let currentData = PersonModel(dictionary: personJSON as! [String:Any])
                 responseResults.append(currentData)
             }
-            let conversion = CharactersModel(next: next, count: count, results: responseResults)
+            
+            var filteredResults = [String : [PersonModel]]()
+
+            let eye_color = responseResults.map { $0.eyeColor }
+            let myArray:[String] = eye_color as! [String]
+            let eyeColorArray = myArray.removingDuplicates()
+            for eyeColor in eyeColorArray {
+                let foundItems = responseResults.filter { $0.eyeColor == eyeColor }
+                filteredResults[eyeColor] = foundItems
+            }
+            
+            print(filteredResults)
+            
+            let conversion = CharactersModel(next: next, count: count, results: responseResults, eyeColorArray: eyeColorArray, filteredResults: filteredResults)
             return Result.success(conversion)
         } else {
             return Result.failure(ErrorResult.parser(string: "Unable to parse conversion rate"))
         }
     }
 }
+
+
+/*
+ print(responseResults)
+ //            let foundItems = responseResults.filter { $0.gender == "male" }
+ //            print(foundItems)
+ 
+ */
