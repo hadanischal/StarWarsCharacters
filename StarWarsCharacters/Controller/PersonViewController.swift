@@ -55,6 +55,7 @@ class PersonViewController: UIViewController {
         segmentedController.addTarget(self, action: #selector(didSelectSegment), for: .valueChanged)
         segmentedController.selectedSegmentIndex = 0
         navigationItem.titleView = segmentedController
+        viewModel.didSelectSegment(0)
     }
     
     @IBAction func didSelectSegment(_ sender: Any) {
