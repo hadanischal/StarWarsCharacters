@@ -11,7 +11,7 @@ import XCTest
 
 class PersonDataSourceTests: XCTestCase {
     var dataSource : PersonDataSource!
-
+    
     override func setUp() {
         super.setUp()
         dataSource = PersonDataSource()
@@ -23,18 +23,24 @@ class PersonDataSourceTests: XCTestCase {
     }
     
     func testEmptyValueInDataSource() {
-        
-        // giving empty data value
-        dataSource.data.value = []
-        
+        dataSource.data.value = []  // giving empty data value
         let tableView = UITableView()
         tableView.dataSource = dataSource
-        
-        // expected one section
         XCTAssertEqual(dataSource.numberOfSections(in: tableView), 1, "Expected one section in table view")
-        
-        // expected zero cells
         XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 0, "Expected no cell in table view")
     }
-    
+}
+
+extension FileManager {
+    static func readJson(forResource fileName: String ) -> Data? {
+        let bundle = Bundle(for: PersonDataSourceTests.self)
+        if let path = bundle.path(forResource: fileName, ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                return data
+            } catch {
+            }
+        }
+        return nil
+    }
 }
