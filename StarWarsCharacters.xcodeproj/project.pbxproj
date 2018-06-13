@@ -28,6 +28,12 @@
 		AF14B31A20CB920F00C2A62A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B31920CB920F00C2A62A /* APIManager.swift */; };
 		AF14B31C20CB982F00C2A62A /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B31B20CB982F00C2A62A /* PersonModel.swift */; };
 		AF14B31E20CBA0E100C2A62A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B31D20CBA0E100C2A62A /* Utility.swift */; };
+		AF4347EA20D0F33300C12EAB /* PersonViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4347E920D0F33300C12EAB /* PersonViewModelTests.swift */; };
+		AF4347EC20D0F34900C12EAB /* PersonDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4347EB20D0F34900C12EAB /* PersonDataSourceTests.swift */; };
+		AF4347EE20D0F39E00C12EAB /* CharactersRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4347ED20D0F39E00C12EAB /* CharactersRouterTests.swift */; };
+		AF4347F020D0F3B400C12EAB /* CharactersModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4347EF20D0F3B400C12EAB /* CharactersModelTests.swift */; };
+		AF4347F220D0F3D000C12EAB /* PersonViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4347F120D0F3D000C12EAB /* PersonViewControllerTests.swift */; };
+		AF4347F420D0F3FF00C12EAB /* Person.json in Resources */ = {isa = PBXBuildFile; fileRef = AF4347F320D0F3FF00C12EAB /* Person.json */; };
 		AFA94CF820CFE5BE0041B97E /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA94CF720CFE5BE0041B97E /* Array.swift */; };
 		AFCD145820CA5F6A00137456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD145720CA5F6A00137456 /* AppDelegate.swift */; };
 		AFCD145A20CA5F6A00137456 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD145920CA5F6A00137456 /* ViewController.swift */; };
@@ -79,6 +85,12 @@
 		AF14B31920CB920F00C2A62A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		AF14B31B20CB982F00C2A62A /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		AF14B31D20CBA0E100C2A62A /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		AF4347E920D0F33300C12EAB /* PersonViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModelTests.swift; sourceTree = "<group>"; };
+		AF4347EB20D0F34900C12EAB /* PersonDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDataSourceTests.swift; sourceTree = "<group>"; };
+		AF4347ED20D0F39E00C12EAB /* CharactersRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRouterTests.swift; sourceTree = "<group>"; };
+		AF4347EF20D0F3B400C12EAB /* CharactersModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersModelTests.swift; sourceTree = "<group>"; };
+		AF4347F120D0F3D000C12EAB /* PersonViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewControllerTests.swift; sourceTree = "<group>"; };
+		AF4347F320D0F3FF00C12EAB /* Person.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Person.json; sourceTree = "<group>"; };
 		AFA94CF720CFE5BE0041B97E /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		AFCD145420CA5F6A00137456 /* StarWarsCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCD145720CA5F6A00137456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -252,7 +264,13 @@
 		AFCD146E20CA5F6A00137456 /* StarWarsCharactersTests */ = {
 			isa = PBXGroup;
 			children = (
+				AF4347F320D0F3FF00C12EAB /* Person.json */,
+				AF4347E920D0F33300C12EAB /* PersonViewModelTests.swift */,
+				AF4347EB20D0F34900C12EAB /* PersonDataSourceTests.swift */,
+				AF4347ED20D0F39E00C12EAB /* CharactersRouterTests.swift */,
+				AF4347EF20D0F3B400C12EAB /* CharactersModelTests.swift */,
 				AFCD146F20CA5F6A00137456 /* StarWarsCharactersTests.swift */,
+				AF4347F120D0F3D000C12EAB /* PersonViewControllerTests.swift */,
 				AFCD147120CA5F6A00137456 /* Info.plist */,
 			);
 			path = StarWarsCharactersTests;
@@ -427,6 +445,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF4347F420D0F3FF00C12EAB /* Person.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +496,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFCD147020CA5F6A00137456 /* StarWarsCharactersTests.swift in Sources */,
+				AF4347F220D0F3D000C12EAB /* PersonViewControllerTests.swift in Sources */,
+				AF4347EC20D0F34900C12EAB /* PersonDataSourceTests.swift in Sources */,
+				AF4347F020D0F3B400C12EAB /* CharactersModelTests.swift in Sources */,
+				AF4347EE20D0F39E00C12EAB /* CharactersRouterTests.swift in Sources */,
+				AF4347EA20D0F33300C12EAB /* PersonViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
