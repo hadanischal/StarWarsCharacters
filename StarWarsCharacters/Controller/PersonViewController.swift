@@ -10,7 +10,6 @@ import UIKit
 
 class PersonViewController: UIViewController {
     fileprivate let segmentedInsets = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 5.0, right: 10.0)
-    
     @IBOutlet weak var tableView : UITableView!
     var segmentedController: UISegmentedControl!
     let dataSource = PersonDataSource()
@@ -29,8 +28,6 @@ class PersonViewController: UIViewController {
     func setupViewModel() {
         self.tableView.dataSource = self.dataSource
         self.dataSource.data.addAndNotify(observer: self) { [weak self] _ in
-//            let eyeColorArray: EyeColorModel = self!.viewModel.filteredResults
-//            self?.setupUISegmentedControl(result: eyeColorArray)
             self?.tableView.reloadData()
         }
         self.viewModel.onErrorHandling = { [weak self] error in
@@ -40,7 +37,6 @@ class PersonViewController: UIViewController {
         self.viewModel.onFilteredResults = { [weak self] result in
             self?.setupUISegmentedControl(result: result!)
         }
-        
     }
     
     func setupUI() {
@@ -51,7 +47,7 @@ class PersonViewController: UIViewController {
     }
     
     func setupUISegmentedControl(result: EyeColorModel){
-        let items = result.eyeColorArray
+        let items = result.eyeColorArray.map {$0.capitalized}
         segmentedController = UISegmentedControl(items: items)
         let paddingSpace = segmentedInsets.left * 2
         let availableWidth = view.frame.width - paddingSpace
@@ -59,11 +55,6 @@ class PersonViewController: UIViewController {
         segmentedController.addTarget(self, action: #selector(didSelectSegment), for: .valueChanged)
         segmentedController.selectedSegmentIndex = 0
         navigationItem.titleView = segmentedController
-    }
-    
-    
-    @objc func actionRefresh() {
-        self.viewModel.fetchServiceCall()
     }
     
     @IBAction func didSelectSegment(_ sender: Any) {

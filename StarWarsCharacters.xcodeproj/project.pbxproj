@@ -36,7 +36,6 @@
 		AF4347F420D0F3FF00C12EAB /* Person.json in Resources */ = {isa = PBXBuildFile; fileRef = AF4347F320D0F3FF00C12EAB /* Person.json */; };
 		AFA94CF820CFE5BE0041B97E /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA94CF720CFE5BE0041B97E /* Array.swift */; };
 		AFCD145820CA5F6A00137456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD145720CA5F6A00137456 /* AppDelegate.swift */; };
-		AFCD145A20CA5F6A00137456 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD145920CA5F6A00137456 /* ViewController.swift */; };
 		AFCD145D20CA5F6A00137456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFCD145B20CA5F6A00137456 /* Main.storyboard */; };
 		AFCD146020CA5F6A00137456 /* StarWarsCharacters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFCD145E20CA5F6A00137456 /* StarWarsCharacters.xcdatamodeld */; };
 		AFCD146220CA5F6A00137456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFCD146120CA5F6A00137456 /* Assets.xcassets */; };
@@ -95,7 +94,6 @@
 		AFA94CF720CFE5BE0041B97E /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		AFCD145420CA5F6A00137456 /* StarWarsCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCD145720CA5F6A00137456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AFCD145920CA5F6A00137456 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AFCD145C20CA5F6A00137456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AFCD145F20CA5F6A00137456 /* StarWarsCharacters.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StarWarsCharacters.xcdatamodel; sourceTree = "<group>"; };
 		AFCD146120CA5F6A00137456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -253,7 +251,6 @@
 				AFCD149120CA654000137456 /* Extension */,
 				AF07CC4E20CCFA7900E9AD75 /* Constants */,
 				AFCD145720CA5F6A00137456 /* AppDelegate.swift */,
-				AFCD145920CA5F6A00137456 /* ViewController.swift */,
 				AFCD145B20CA5F6A00137456 /* Main.storyboard */,
 				AFCD146120CA5F6A00137456 /* Assets.xcassets */,
 				AFCD146320CA5F6A00137456 /* LaunchScreen.storyboard */,
@@ -470,7 +467,6 @@
 				AF14B31220CB7C6800C2A62A /* NetworkHandler.swift in Sources */,
 				AF1444A520CCBB55005FDFAD /* PersonViewController.swift in Sources */,
 				AF14B30820CB691900C2A62A /* Reachability.swift in Sources */,
-				AFCD145A20CA5F6A00137456 /* ViewController.swift in Sources */,
 				AF14B30220CB67C900C2A62A /* ErrorResult.swift in Sources */,
 				AF1444AF20CCC85F005FDFAD /* PersonCell.swift in Sources */,
 				AF14B30420CB681A00C2A62A /* ParserHelper.swift in Sources */,

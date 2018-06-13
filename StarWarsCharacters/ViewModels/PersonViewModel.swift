@@ -33,7 +33,6 @@ class PersonViewModel {
                     self.dataSource?.data.value = converter.results
                     let results = EyeColorModel.parseEyeColorArray(results: converter.results)
                     self.filteredResults = results
-
                     self.onFilteredResults?(results)
                     
                 case .failure(let error) :
@@ -48,7 +47,5 @@ class PersonViewModel {
         let filteredResults: [String : [PersonModel]] = self.filteredResults.filteredResults
         let eyeColor = eyeColorArray[segmentIndex]
         self.dataSource?.data.value = filteredResults[eyeColor]!
-        
     }
-    
 }

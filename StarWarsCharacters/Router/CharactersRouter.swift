@@ -14,7 +14,6 @@ protocol CharactersRouterProtocol: class {
 
 final class CharactersRouter: NetworkHandler, CharactersRouterProtocol {
     static let shared = CharactersRouter()
-
     let endpoint = APIManager.allPersonsURL
     var task : URLSessionTask?
     

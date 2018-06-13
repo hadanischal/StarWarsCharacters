@@ -28,4 +28,3 @@ extension EyeColorModel {
         return conversion
     }
 }
-
