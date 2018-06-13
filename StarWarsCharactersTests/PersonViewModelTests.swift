@@ -13,7 +13,7 @@ class PersonViewModelTests: XCTestCase {
     fileprivate class MockFeedsService: CharactersRouterProtocol {
         var charactersData: CharactersModel?
         func fetchConverter(_ completion: @escaping ((Result<CharactersModel, ErrorResult>) -> Void)) {
-            if let data = feedsData {
+            if let data = charactersData {
                 completion(Result.success(data))
             } else {
                 completion(Result.failure(ErrorResult.custom(string: "No converter")))
@@ -50,4 +50,15 @@ class PersonViewModelTests: XCTestCase {
         }
     }
     
+    func testFetchNoCharacters() {
+        service.charactersData = nil
+        viewModel.fetchServiceCall { result in
+            switch result {
+            case .success(_) :
+                XCTAssert(false, "ViewModel should not be able to fetch ")
+            default: break
+            }
+        }
+    }
+
 }
