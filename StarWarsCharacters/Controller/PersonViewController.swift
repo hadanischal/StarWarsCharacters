@@ -29,8 +29,8 @@ class PersonViewController: UIViewController {
     func setupViewModel() {
         self.tableView.dataSource = self.dataSource
         self.dataSource.data.addAndNotify(observer: self) { [weak self] _ in
-            //            let eyeColorArray: EyeColorModel = self!.viewModel.filteredResults
-            //            self?.setupUISegmentedControl(result: eyeColorArray)
+//            let eyeColorArray: EyeColorModel = self!.viewModel.filteredResults
+//            self?.setupUISegmentedControl(result: eyeColorArray)
             self?.tableView.reloadData()
         }
         self.viewModel.onErrorHandling = { [weak self] error in
@@ -67,6 +67,8 @@ class PersonViewController: UIViewController {
     }
     
     @IBAction func didSelectSegment(_ sender: Any) {
+        let segmentIndex = segmentedController.selectedSegmentIndex
+        viewModel.didSelectSegment(segmentIndex)
     }
 }
 
