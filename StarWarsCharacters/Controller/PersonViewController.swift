@@ -12,6 +12,7 @@ class PersonViewController: UIViewController {
     fileprivate let segmentedInsets = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 5.0, right: 10.0)
     @IBOutlet weak var tableView : UITableView!
     var segmentedController: UISegmentedControl!
+    private let refreshControl = UIRefreshControl()
     let dataSource = PersonDataSource()
     lazy var viewModel : PersonViewModel = {
         let viewModel = PersonViewModel(dataSource: dataSource)
@@ -21,8 +22,25 @@ class PersonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
+        self.setupUIRefreshControl()
         self.setupViewModel()
         self.viewModel.fetchServiceCall()
+    }
+    
+    func setupUI() {
+        self.title = "Star Wars characters"
+        self.tableView.backgroundColor = ThemeColor.white
+        self.view.backgroundColor = ThemeColor.white
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+    }
+    
+    func setupUIRefreshControl() {
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        refreshControl.addTarget(self, action: #selector(refreshPeopleData), for: .valueChanged)
     }
     
     func setupViewModel() {
@@ -37,13 +55,6 @@ class PersonViewController: UIViewController {
         self.viewModel.onFilteredResults = { [weak self] result in
             self?.setupUISegmentedControl(result: result!)
         }
-    }
-    
-    func setupUI() {
-        self.title = "Star Wars characters"
-        self.tableView.backgroundColor = ThemeColor.white
-        self.view.backgroundColor = ThemeColor.white
-        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
     
     func setupUISegmentedControl(result: EyeColorModel){
@@ -61,6 +72,11 @@ class PersonViewController: UIViewController {
     @IBAction func didSelectSegment(_ sender: Any) {
         let segmentIndex = segmentedController.selectedSegmentIndex
         viewModel.didSelectSegment(segmentIndex)
+    }
+    
+    @objc private func refreshPeopleData(_ sender: Any) {
+        self.viewModel.fetchServiceCall()
+        self.refreshControl.endRefreshing()
     }
 }
 
