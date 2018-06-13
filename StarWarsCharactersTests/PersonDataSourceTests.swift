@@ -10,10 +10,11 @@ import XCTest
 @testable import StarWarsCharacters
 
 class PersonDataSourceTests: XCTestCase {
-    
+    var dataSource : PersonDataSource!
+
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        dataSource = PersonDataSource()
     }
     
     override func tearDown() {
