@@ -19,7 +19,6 @@ class PersonViewModel {
         self.dataSource = dataSource
         self.service = service
         self.filteredResults =  EyeColorModel(eyeColorArray: [], filteredResults: [:])
-        
     }
     
     func fetchServiceCall(_ completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
@@ -34,7 +33,7 @@ class PersonViewModel {
                     self.dataSource?.data.value = converter.results
                     let results = EyeColorModel.parseEyeColorArray(results: converter.results)
                     self.filteredResults = results
-                    
+
                     self.onFilteredResults?(results)
                     
                 case .failure(let error) :
@@ -43,4 +42,13 @@ class PersonViewModel {
             }
         }
     }
+    
+    func didSelectSegment(_ segmentIndex: Int) {
+        let eyeColorArray: [String] = self.filteredResults.eyeColorArray
+        let filteredResults: [String : [PersonModel]] = self.filteredResults.filteredResults
+        let eyeColor = eyeColorArray[segmentIndex]
+        self.dataSource?.data.value = filteredResults[eyeColor]!
+        
+    }
+    
 }
