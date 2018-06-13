@@ -16,7 +16,7 @@ class GenericDataSource<T> : NSObject {
 class PersonDataSource : GenericDataSource<PersonModel>, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return data.value.count == 0 ? 0 : 1
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
