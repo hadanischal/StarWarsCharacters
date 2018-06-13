@@ -31,5 +31,23 @@ class CharactersModelTests: XCTestCase {
         }
         ParserHelper.parse(data: data, completion: completion)
     }
-
+    
+    func testParseCharacters() {
+        guard let data = FileManager.readJson(forResource: "Person") else {
+            XCTAssert(false, "Can't get data from Person.json")
+            return
+        }
+        let completion : ((Result<CharactersModel, ErrorResult>) -> Void) = { result in
+            switch result {
+            case .failure(_):
+                XCTAssert(false, "Expected valid converter")
+            case .success(let converter):
+                XCTAssertEqual(converter.count, 87, "Expected 87 count")
+                XCTAssertEqual(converter.next, "https://swapi.co/api/people/?page=2", "Expected https://swapi.co/api/people/?page=2 next")
+                XCTAssertEqual(converter.previous, "https://swapi.co/api/people/?page=2", "Expected https://swapi.co/api/people/?page=2 previous")
+                XCTAssertEqual(converter.results.count, 10, "Expected 10 results")
+            }
+        }
+        ParserHelper.parse(data: data, completion: completion)
+    }
 }
