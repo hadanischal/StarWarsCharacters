@@ -23,15 +23,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonCell" id="NQm-br-46s" customClass="PersonCell" customModule="StarWarsCharacters" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonCell" rowHeight="54" id="NQm-br-46s" customClass="PersonCell" customModule="StarWarsCharacters" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NQm-br-46s" id="0MP-XA-16F">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beD-3F-Ad8">
-                                                    <rect key="frame" x="23" y="11.5" width="329" height="20.5"/>
+                                                    <rect key="frame" x="23" y="6.5" width="329" height="20.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="fd3-Lb-CTc"/>
                                                     </constraints>
@@ -39,14 +39,27 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTZ-5U-jX3">
+                                                    <rect key="frame" x="23" y="27" width="329" height="14.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="14.5" id="Q4O-g2-Y8R"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="BTZ-5U-jX3" firstAttribute="top" secondItem="beD-3F-Ad8" secondAttribute="bottom" id="3nF-07-anN"/>
                                                 <constraint firstItem="beD-3F-Ad8" firstAttribute="leading" secondItem="0MP-XA-16F" secondAttribute="leadingMargin" constant="8" id="5kk-Yb-ASP"/>
-                                                <constraint firstItem="beD-3F-Ad8" firstAttribute="centerY" secondItem="0MP-XA-16F" secondAttribute="centerY" id="ONe-2T-HQR"/>
+                                                <constraint firstItem="beD-3F-Ad8" firstAttribute="centerY" secondItem="0MP-XA-16F" secondAttribute="centerY" constant="-10" id="ONe-2T-HQR"/>
+                                                <constraint firstItem="BTZ-5U-jX3" firstAttribute="leading" secondItem="0MP-XA-16F" secondAttribute="leadingMargin" constant="8" id="TUo-ER-q25"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="beD-3F-Ad8" secondAttribute="trailing" constant="8" id="VBd-16-Nco"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="BTZ-5U-jX3" secondAttribute="trailing" constant="8" id="pB8-m9-M8H"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="subtitleLabel" destination="BTZ-5U-jX3" id="lrw-2E-tjd"/>
                                             <outlet property="titleLabel" destination="beD-3F-Ad8" id="X3d-cY-dDK"/>
                                         </connections>
                                     </tableViewCell>

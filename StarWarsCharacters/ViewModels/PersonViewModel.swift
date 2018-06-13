@@ -34,12 +34,12 @@ class PersonViewModel {
                 switch result {
                 case .success(let converter) :
                     self.dataSource?.data.value = converter.results
-                    let results = EyeColorModel.parseEyeColorArray(results: converter.results)
-                    self.filteredResults = results
-                    self.onFilteredResults?(results)
-                    
+                    self.filteredResults = EyeColorModel.parseEyeColorArray(results: converter.results)
+                    self.onFilteredResults?(self.filteredResults)
+                    completion?(Result.success(true))
                 case .failure(let error) :
                     self.onErrorHandling?(error)
+                    completion?(Result.failure(error))
                 }
             }
         }

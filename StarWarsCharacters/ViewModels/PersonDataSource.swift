@@ -29,5 +29,6 @@ class PersonDataSource : GenericDataSource<PersonModel>, UITableViewDataSource {
         cell.personModel = data
         return cell
     }
+
 }
 

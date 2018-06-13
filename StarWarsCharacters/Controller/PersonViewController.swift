@@ -9,9 +9,12 @@
 import UIKit
 
 class PersonViewController: UIViewController {
-    fileprivate let segmentedInsets = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 5.0, right: 10.0)
     @IBOutlet weak var tableView : UITableView!
     var segmentedController: UISegmentedControl!
+    
+    fileprivate let segmentedInsets = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 5.0, right: 10.0)
+    fileprivate var activityIndicator : ActivityIndicator! = ActivityIndicator()
+    private let refreshControl = UIRefreshControl()
     let dataSource = PersonDataSource()
     lazy var viewModel : PersonViewModel = {
         let viewModel = PersonViewModel(dataSource: dataSource)
@@ -21,8 +24,28 @@ class PersonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
+        self.setupUIRefreshControl()
         self.setupViewModel()
-        self.viewModel.fetchServiceCall()
+        self.activityIndicator.start()
+        self.viewModel.fetchServiceCall{ result in
+            self.activityIndicator.stop()
+        }
+    }
+    
+    func setupUI() {
+        self.title = "Star Wars characters"
+        self.tableView.backgroundColor = ThemeColor.white
+        self.view.backgroundColor = ThemeColor.white
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+    }
+    
+    func setupUIRefreshControl() {
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        refreshControl.addTarget(self, action: #selector(refreshPeopleData), for: .valueChanged)
     }
     
     func setupViewModel() {
@@ -39,15 +62,14 @@ class PersonViewController: UIViewController {
         }
     }
     
-    func setupUI() {
-        self.title = "Star Wars characters"
-        self.tableView.backgroundColor = ThemeColor.white
-        self.view.backgroundColor = ThemeColor.white
-        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
-    }
-    
     func setupUISegmentedControl(result: EyeColorModel){
-        let items = result.eyeColorArray.map {$0.capitalized}
+        let filteredResults: [String : [PersonModel]] = result.filteredResults
+        var items = [String]()
+        for eyeColor in result.eyeColorArray {
+            let person = filteredResults[eyeColor]
+            let value = eyeColor.capitalized + "(" + "\(person?.count ?? 0)" + ")"
+            items.append(value)
+        }
         segmentedController = UISegmentedControl(items: items)
         let paddingSpace = segmentedInsets.left * 2
         let availableWidth = view.frame.width - paddingSpace
@@ -62,6 +84,14 @@ class PersonViewController: UIViewController {
         let segmentIndex = segmentedController.selectedSegmentIndex
         viewModel.didSelectSegment(segmentIndex)
     }
+    
+    @objc private func refreshPeopleData(_ sender: Any) {
+        self.activityIndicator.start()
+        self.viewModel.fetchServiceCall{ result in
+            self.activityIndicator.stop()
+        }
+        self.refreshControl.endRefreshing()
+    }
 }
 
 // MARK: - TableViewDelegate Setup
@@ -73,7 +103,7 @@ extension PersonViewController : UITableViewDelegate{
         return 100
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 70
     }
 }
 
