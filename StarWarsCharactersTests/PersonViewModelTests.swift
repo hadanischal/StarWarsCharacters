@@ -33,8 +33,11 @@ class PersonViewModelTests: XCTestCase {
     }
     
     override func tearDown() {
+        self.viewModel = nil
+        self.dataSource = nil
+        self.service = nil
         super.tearDown()
     }
     
-    
+
 }
