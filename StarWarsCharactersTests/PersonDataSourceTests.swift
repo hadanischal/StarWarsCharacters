@@ -22,16 +22,19 @@ class PersonDataSourceTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testEmptyValueInDataSource() {
+        
+        // giving empty data value
+        dataSource.data.value = []
+        
+        let tableView = UITableView()
+        tableView.dataSource = dataSource
+        
+        // expected one section
+        XCTAssertEqual(dataSource.numberOfSections(in: tableView), 1, "Expected one section in table view")
+        
+        // expected zero cells
+        XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 0, "Expected no cell in table view")
     }
     
 }
