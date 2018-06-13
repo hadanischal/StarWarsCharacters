@@ -13,7 +13,6 @@ struct CharactersModel {
     let next: String?
     let previous: String?
     let results: [PersonModel]
-    
 //    let eyeColorArray: [String]
 //    let filteredResults: [String : [PersonModel]]
 

@@ -50,4 +50,16 @@ class CharactersModelTests: XCTestCase {
         }
         ParserHelper.parse(data: data, completion: completion)
     }
+    
+    func testWrongKeyCharacters() {
+        let dictionary = ["testObject" : 123 as AnyObject]
+        let result = CharactersModel.parseObject(dictionary: dictionary)
+        switch result {
+        case .success(_):
+            XCTAssert(false, "Expected failure when wrong data")
+        default:
+            return
+        }
+    }
+
 }
