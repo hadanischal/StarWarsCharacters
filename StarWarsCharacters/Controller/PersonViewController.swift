@@ -23,7 +23,7 @@ class PersonViewController: UIViewController {
         super.viewDidLoad()
         self.setupUI()
         self.setupViewModel()
-        self.viewModel.setupServiceCall()
+        self.viewModel.fetchServiceCall()
     }
     
     func setupViewModel() {
@@ -57,7 +57,7 @@ class PersonViewController: UIViewController {
     
     
     @objc func actionRefresh() {
-        self.viewModel.setupServiceCall()
+        self.viewModel.fetchServiceCall()
     }
     
     @IBAction func didSelectSegment(_ sender: Any) {
