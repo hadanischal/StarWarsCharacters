@@ -27,6 +27,9 @@ class PersonViewModelTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        self.service = MockFeedsService()
+        self.dataSource = GenericDataSource<PersonModel>()
+        self.viewModel = PersonViewModel(service: service, dataSource: dataSource)
     }
     
     override func tearDown() {
