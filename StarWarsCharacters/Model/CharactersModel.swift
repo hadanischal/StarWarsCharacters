@@ -23,7 +23,7 @@ extension CharactersModel : Parceable {
     static func parseObject(dictionary: [String : AnyObject]) -> Result<CharactersModel, ErrorResult> {
         print(dictionary)
         if let next = dictionary["next"] as? String,
-            let previous = dictionary["previous"] as? String,
+            let previous = (dictionary["next"] ?? "unknown" as AnyObject) as? String,
             let count = dictionary["count"] as? Int,
             let personsArray = dictionary["results"] as? [AnyObject]{
             var responseResults = [PersonModel]()

@@ -31,20 +31,23 @@ class PersonDataSourceTests: XCTestCase {
     }
     
     func testValueInDataSource() {
-        let responseResults:[PersonModel] = getDataValue()
-        let newArray = Array(responseResults[0..<2])
-        dataSource.data.value = newArray
-        let tableView = UITableView()
-        tableView.dataSource = dataSource
-        XCTAssertEqual(dataSource.numberOfSections(in: tableView), 1, "Expected one section in table view")
-        XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 2, "Expected two cell in table view")
+        if getDataValue().count != 0{
+            let responseResults:[PersonModel] = getDataValue()
+            let newArray = Array(responseResults[0..<2])
+            dataSource.data.value = newArray
+            let tableView = UITableView()
+            tableView.dataSource = dataSource
+            XCTAssertEqual(dataSource.numberOfSections(in: tableView), 1, "Expected one section in table view")
+            XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 2, "Expected two cell in table view")
+        }else{
+            XCTAssert(false, "Can't get data from FileManager")
+        }
     }
-
-    
+        
     func getDataValue() ->[PersonModel]{
         var responseResults = [PersonModel]()
         guard let data = FileManager.readJson(forResource: "Person") else {
-            XCTAssert(false, "Can't get data from Person.json.json")
+            XCTAssert(false, "Can't get data from Person.json")
             return responseResults
         }
         let completion : ((Result<CharactersModel, ErrorResult>) -> Void) = { result in
