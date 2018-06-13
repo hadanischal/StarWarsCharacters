@@ -8,14 +8,18 @@
 
 import Foundation
 
-struct PersonViewModel {
+class PersonViewModel {
     weak var dataSource : GenericDataSource<PersonModel>?
     weak var service: CharactersRouterProtocol?
     var onErrorHandling : ((ErrorResult?) -> Void)?
+    var onFilteredResults : ((EyeColorModel?) -> Void)?
+    var filteredResults:EyeColorModel
     
     init(service: CharactersRouterProtocol? = CharactersRouter.shared, dataSource : GenericDataSource<PersonModel>?) {
         self.dataSource = dataSource
-        self.service = service 
+        self.service = service
+        self.filteredResults =  EyeColorModel(eyeColorArray: [], filteredResults: [:])
+        
     }
     
     func fetchServiceCall(_ completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
@@ -27,8 +31,12 @@ struct PersonViewModel {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let converter) :
-                    //print(converter)
                     self.dataSource?.data.value = converter.results
+                    let results = EyeColorModel.parseEyeColorArray(results: converter.results)
+                    self.filteredResults = results
+                    
+                    self.onFilteredResults?(results)
+                    
                 case .failure(let error) :
                     self.onErrorHandling?(error)
                 }
