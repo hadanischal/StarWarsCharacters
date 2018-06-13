@@ -63,7 +63,13 @@ class PersonViewController: UIViewController {
     }
     
     func setupUISegmentedControl(result: EyeColorModel){
-        let items = result.eyeColorArray.map {$0.capitalized}
+        let filteredResults: [String : [PersonModel]] = result.filteredResults
+        var items = [String]()
+        for eyeColor in result.eyeColorArray {
+            let person = filteredResults[eyeColor]
+            let value = eyeColor.capitalized + "(" + "\(person?.count ?? 0)" + ")"
+            items.append(value)
+        }
         segmentedController = UISegmentedControl(items: items)
         let paddingSpace = segmentedInsets.left * 2
         let availableWidth = view.frame.width - paddingSpace
@@ -97,7 +103,7 @@ extension PersonViewController : UITableViewDelegate{
         return 100
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 70
     }
 }
 
