@@ -1,15 +1,15 @@
 //
-//  StarWarsCharactersTests.swift
+//  PersonViewControllerTests.swift
 //  StarWarsCharactersTests
 //
-//  Created by Nischal Hada on 6/8/18.
+//  Created by Nischal Hada on 6/13/18.
 //  Copyright © 2018 NischalHada. All rights reserved.
 //
 
 import XCTest
 @testable import StarWarsCharacters
 
-class StarWarsCharactersTests: XCTestCase {
+class PersonViewControllerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF07CC5020CCFAA000E9AD75 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF07CC4F20CCFAA000E9AD75 /* ThemeColor.swift */; };
+		AF07CC5220CCFABE00E9AD75 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF07CC5120CCFABE00E9AD75 /* UIColor.swift */; };
+		AF07CC5620CCFD2600E9AD75 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF07CC5520CCFD2600E9AD75 /* Wireframe.swift */; };
 		AF1444A520CCBB55005FDFAD /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1444A420CCBB55005FDFAD /* PersonViewController.swift */; };
 		AF1444A720CCBC59005FDFAD /* DynamicValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1444A620CCBC59005FDFAD /* DynamicValue.swift */; };
+		AF1444AA20CCC589005FDFAD /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1444A920CCC589005FDFAD /* PersonViewModel.swift */; };
+		AF1444AD20CCC716005FDFAD /* PersonDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1444AC20CCC715005FDFAD /* PersonDataSource.swift */; };
+		AF1444AF20CCC85F005FDFAD /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1444AE20CCC85F005FDFAD /* PersonCell.swift */; };
 		AF14B30020CB67B400C2A62A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B2FF20CB67B400C2A62A /* Result.swift */; };
 		AF14B30220CB67C900C2A62A /* ErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B30120CB67C900C2A62A /* ErrorResult.swift */; };
 		AF14B30420CB681A00C2A62A /* ParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B30320CB681A00C2A62A /* ParserHelper.swift */; };
@@ -22,6 +28,13 @@
 		AF14B31A20CB920F00C2A62A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B31920CB920F00C2A62A /* APIManager.swift */; };
 		AF14B31C20CB982F00C2A62A /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B31B20CB982F00C2A62A /* PersonModel.swift */; };
 		AF14B31E20CBA0E100C2A62A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B31D20CBA0E100C2A62A /* Utility.swift */; };
+		AF4347EA20D0F33300C12EAB /* PersonViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4347E920D0F33300C12EAB /* PersonViewModelTests.swift */; };
+		AF4347EC20D0F34900C12EAB /* PersonDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4347EB20D0F34900C12EAB /* PersonDataSourceTests.swift */; };
+		AF4347EE20D0F39E00C12EAB /* CharactersRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4347ED20D0F39E00C12EAB /* CharactersRouterTests.swift */; };
+		AF4347F020D0F3B400C12EAB /* CharactersModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4347EF20D0F3B400C12EAB /* CharactersModelTests.swift */; };
+		AF4347F220D0F3D000C12EAB /* PersonViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4347F120D0F3D000C12EAB /* PersonViewControllerTests.swift */; };
+		AF4347F420D0F3FF00C12EAB /* Person.json in Resources */ = {isa = PBXBuildFile; fileRef = AF4347F320D0F3FF00C12EAB /* Person.json */; };
+		AFA94CF820CFE5BE0041B97E /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA94CF720CFE5BE0041B97E /* Array.swift */; };
 		AFCD145820CA5F6A00137456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD145720CA5F6A00137456 /* AppDelegate.swift */; };
 		AFCD145A20CA5F6A00137456 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD145920CA5F6A00137456 /* ViewController.swift */; };
 		AFCD145D20CA5F6A00137456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFCD145B20CA5F6A00137456 /* Main.storyboard */; };
@@ -51,8 +64,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF07CC4F20CCFAA000E9AD75 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
+		AF07CC5120CCFABE00E9AD75 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		AF07CC5520CCFD2600E9AD75 /* Wireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		AF1444A420CCBB55005FDFAD /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		AF1444A620CCBC59005FDFAD /* DynamicValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicValue.swift; sourceTree = "<group>"; };
+		AF1444A920CCC589005FDFAD /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
+		AF1444AC20CCC715005FDFAD /* PersonDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDataSource.swift; sourceTree = "<group>"; };
+		AF1444AE20CCC85F005FDFAD /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		AF14B2FF20CB67B400C2A62A /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		AF14B30120CB67C900C2A62A /* ErrorResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResult.swift; sourceTree = "<group>"; };
 		AF14B30320CB681A00C2A62A /* ParserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserHelper.swift; sourceTree = "<group>"; };
@@ -66,6 +85,13 @@
 		AF14B31920CB920F00C2A62A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		AF14B31B20CB982F00C2A62A /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		AF14B31D20CBA0E100C2A62A /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		AF4347E920D0F33300C12EAB /* PersonViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModelTests.swift; sourceTree = "<group>"; };
+		AF4347EB20D0F34900C12EAB /* PersonDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDataSourceTests.swift; sourceTree = "<group>"; };
+		AF4347ED20D0F39E00C12EAB /* CharactersRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRouterTests.swift; sourceTree = "<group>"; };
+		AF4347EF20D0F3B400C12EAB /* CharactersModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersModelTests.swift; sourceTree = "<group>"; };
+		AF4347F120D0F3D000C12EAB /* PersonViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewControllerTests.swift; sourceTree = "<group>"; };
+		AF4347F320D0F3FF00C12EAB /* Person.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Person.json; sourceTree = "<group>"; };
+		AFA94CF720CFE5BE0041B97E /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		AFCD145420CA5F6A00137456 /* StarWarsCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCD145720CA5F6A00137456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFCD145920CA5F6A00137456 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +134,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF07CC4E20CCFA7900E9AD75 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				AF07CC4F20CCFAA000E9AD75 /* ThemeColor.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		AF14B2FB20CB678100C2A62A /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +186,8 @@
 				AF14B30620CB690600C2A62A /* Reachability */,
 				AF1444A620CCBC59005FDFAD /* DynamicValue.swift */,
 				AF14B31D20CBA0E100C2A62A /* Utility.swift */,
+				AF07CC5520CCFD2600E9AD75 /* Wireframe.swift */,
+				AFA94CF720CFE5BE0041B97E /* Array.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -213,6 +249,7 @@
 				AF14B31320CB838000C2A62A /* Router */,
 				AF14B30520CB68E200C2A62A /* Utils */,
 				AFCD149120CA654000137456 /* Extension */,
+				AF07CC4E20CCFA7900E9AD75 /* Constants */,
 				AFCD145720CA5F6A00137456 /* AppDelegate.swift */,
 				AFCD145920CA5F6A00137456 /* ViewController.swift */,
 				AFCD145B20CA5F6A00137456 /* Main.storyboard */,
@@ -227,7 +264,13 @@
 		AFCD146E20CA5F6A00137456 /* StarWarsCharactersTests */ = {
 			isa = PBXGroup;
 			children = (
+				AF4347F320D0F3FF00C12EAB /* Person.json */,
+				AF4347E920D0F33300C12EAB /* PersonViewModelTests.swift */,
+				AF4347EB20D0F34900C12EAB /* PersonDataSourceTests.swift */,
+				AF4347ED20D0F39E00C12EAB /* CharactersRouterTests.swift */,
+				AF4347EF20D0F3B400C12EAB /* CharactersModelTests.swift */,
 				AFCD146F20CA5F6A00137456 /* StarWarsCharactersTests.swift */,
+				AF4347F120D0F3D000C12EAB /* PersonViewControllerTests.swift */,
 				AFCD147120CA5F6A00137456 /* Info.plist */,
 			);
 			path = StarWarsCharactersTests;
@@ -245,6 +288,7 @@
 		AFCD149020CA654000137456 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AF1444AE20CCC85F005FDFAD /* PersonCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -252,6 +296,7 @@
 		AFCD149120CA654000137456 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				AF07CC5120CCFABE00E9AD75 /* UIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -276,6 +321,8 @@
 		AFCD149520CA654100137456 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				AF1444A920CCC589005FDFAD /* PersonViewModel.swift */,
+				AF1444AC20CCC715005FDFAD /* PersonDataSource.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -398,6 +445,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF4347F420D0F3FF00C12EAB /* Person.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,8 +469,11 @@
 				AF14B30820CB691900C2A62A /* Reachability.swift in Sources */,
 				AFCD145A20CA5F6A00137456 /* ViewController.swift in Sources */,
 				AF14B30220CB67C900C2A62A /* ErrorResult.swift in Sources */,
+				AF1444AF20CCC85F005FDFAD /* PersonCell.swift in Sources */,
 				AF14B30420CB681A00C2A62A /* ParserHelper.swift in Sources */,
+				AF1444AA20CCC589005FDFAD /* PersonViewModel.swift in Sources */,
 				AF1444A720CCBC59005FDFAD /* DynamicValue.swift in Sources */,
+				AF07CC5220CCFABE00E9AD75 /* UIColor.swift in Sources */,
 				AF14B31A20CB920F00C2A62A /* APIManager.swift in Sources */,
 				AFCD146020CA5F6A00137456 /* StarWarsCharacters.xcdatamodeld in Sources */,
 				AF14B30A20CB694600C2A62A /* ReachabilityError.swift in Sources */,
@@ -430,9 +481,13 @@
 				AF14B31720CB84B500C2A62A /* CharactersModel.swift in Sources */,
 				AFCD145820CA5F6A00137456 /* AppDelegate.swift in Sources */,
 				AF14B31E20CBA0E100C2A62A /* Utility.swift in Sources */,
+				AF07CC5020CCFAA000E9AD75 /* ThemeColor.swift in Sources */,
 				AF14B31C20CB982F00C2A62A /* PersonModel.swift in Sources */,
+				AF07CC5620CCFD2600E9AD75 /* Wireframe.swift in Sources */,
+				AFA94CF820CFE5BE0041B97E /* Array.swift in Sources */,
 				AF14B31520CB83DF00C2A62A /* CharactersRouter.swift in Sources */,
 				AF14B30E20CB6B3B00C2A62A /* NetworkMethod.swift in Sources */,
+				AF1444AD20CCC716005FDFAD /* PersonDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +496,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFCD147020CA5F6A00137456 /* StarWarsCharactersTests.swift in Sources */,
+				AF4347F220D0F3D000C12EAB /* PersonViewControllerTests.swift in Sources */,
+				AF4347EC20D0F34900C12EAB /* PersonDataSourceTests.swift in Sources */,
+				AF4347F020D0F3B400C12EAB /* CharactersModelTests.swift in Sources */,
+				AF4347EE20D0F39E00C12EAB /* CharactersRouterTests.swift in Sources */,
+				AF4347EA20D0F33300C12EAB /* PersonViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +660,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = StarWarsCharacters/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Nischalhada.StarWarsCharacters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -614,6 +675,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = StarWarsCharacters/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Nischalhada.StarWarsCharacters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
