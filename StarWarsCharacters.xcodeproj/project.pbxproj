@@ -44,6 +44,7 @@
 		AFCD147020CA5F6A00137456 /* StarWarsCharactersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD146F20CA5F6A00137456 /* StarWarsCharactersTests.swift */; };
 		AFCD147B20CA5F6A00137456 /* StarWarsCharactersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD147A20CA5F6A00137456 /* StarWarsCharactersUITests.swift */; };
 		AFCD148D20CA625100137456 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AFCD148C20CA625100137456 /* .gitignore */; };
+		AFECBB5520D10E8D00D261BF /* EyeColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFECBB5420D10E8D00D261BF /* EyeColorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		AFCD147A20CA5F6A00137456 /* StarWarsCharactersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCharactersUITests.swift; sourceTree = "<group>"; };
 		AFCD147C20CA5F6A00137456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFCD148C20CA625100137456 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AFECBB5420D10E8D00D261BF /* EyeColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeColorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +316,7 @@
 			children = (
 				AF14B31620CB84B500C2A62A /* CharactersModel.swift */,
 				AF14B31B20CB982F00C2A62A /* PersonModel.swift */,
+				AFECBB5420D10E8D00D261BF /* EyeColorModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				AF1444AA20CCC589005FDFAD /* PersonViewModel.swift in Sources */,
 				AF1444A720CCBC59005FDFAD /* DynamicValue.swift in Sources */,
 				AF07CC5220CCFABE00E9AD75 /* UIColor.swift in Sources */,
+				AFECBB5520D10E8D00D261BF /* EyeColorModel.swift in Sources */,
 				AF14B31A20CB920F00C2A62A /* APIManager.swift in Sources */,
 				AFCD146020CA5F6A00137456 /* StarWarsCharacters.xcdatamodeld in Sources */,
 				AF14B30A20CB694600C2A62A /* ReachabilityError.swift in Sources */,
