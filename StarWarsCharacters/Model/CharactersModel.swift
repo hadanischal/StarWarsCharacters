@@ -13,9 +13,6 @@ struct CharactersModel {
     let next: String?
     let previous: String?
     let results: [PersonModel]
-//    let eyeColorArray: [String]
-//    let filteredResults: [String : [PersonModel]]
-
 }
 
 extension CharactersModel : Parceable {
@@ -30,16 +27,6 @@ extension CharactersModel : Parceable {
                 let currentData = PersonModel(dictionary: personJSON as! [String:Any])
                 responseResults.append(currentData)
             }
-            /*
-            var filteredResults = [String : [PersonModel]]()
-            let eye_color = responseResults.map { $0.eyeColor }
-            let myArray:[String] = eye_color as! [String]
-            let eyeColorArray = myArray.removingDuplicates()
-            for eyeColor in eyeColorArray {
-                let foundItems = responseResults.filter { $0.eyeColor == eyeColor }
-                filteredResults[eyeColor] = foundItems
-            }
-            */
             let conversion = CharactersModel(count: count, next: next, previous: previous, results: responseResults)
             return Result.success(conversion)
         } else {
@@ -48,10 +35,3 @@ extension CharactersModel : Parceable {
     }
 }
 
-
-/*
- print(responseResults)
- //            let foundItems = responseResults.filter { $0.gender == "male" }
- //            print(foundItems)
- 
- */
