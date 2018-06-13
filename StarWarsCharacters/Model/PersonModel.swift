@@ -27,4 +27,3 @@ struct PersonModel{
         self.urlString = dictionary["url"] as?  String ?? "unknown"
     }
 }
-

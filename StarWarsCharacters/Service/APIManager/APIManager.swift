@@ -8,7 +8,6 @@
 
 import Foundation
 
-/// Defines the path for a certain resource
 enum Method: String {
     case allPersons = "people/"
     case allFilms = "films/"

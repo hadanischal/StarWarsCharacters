@@ -36,7 +36,6 @@
 		AF4347F420D0F3FF00C12EAB /* Person.json in Resources */ = {isa = PBXBuildFile; fileRef = AF4347F320D0F3FF00C12EAB /* Person.json */; };
 		AFA94CF820CFE5BE0041B97E /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA94CF720CFE5BE0041B97E /* Array.swift */; };
 		AFCD145820CA5F6A00137456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD145720CA5F6A00137456 /* AppDelegate.swift */; };
-		AFCD145A20CA5F6A00137456 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD145920CA5F6A00137456 /* ViewController.swift */; };
 		AFCD145D20CA5F6A00137456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFCD145B20CA5F6A00137456 /* Main.storyboard */; };
 		AFCD146020CA5F6A00137456 /* StarWarsCharacters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFCD145E20CA5F6A00137456 /* StarWarsCharacters.xcdatamodeld */; };
 		AFCD146220CA5F6A00137456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFCD146120CA5F6A00137456 /* Assets.xcassets */; };
@@ -44,6 +43,7 @@
 		AFCD147020CA5F6A00137456 /* StarWarsCharactersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD146F20CA5F6A00137456 /* StarWarsCharactersTests.swift */; };
 		AFCD147B20CA5F6A00137456 /* StarWarsCharactersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD147A20CA5F6A00137456 /* StarWarsCharactersUITests.swift */; };
 		AFCD148D20CA625100137456 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AFCD148C20CA625100137456 /* .gitignore */; };
+		AFECBB5520D10E8D00D261BF /* EyeColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFECBB5420D10E8D00D261BF /* EyeColorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +94,6 @@
 		AFA94CF720CFE5BE0041B97E /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		AFCD145420CA5F6A00137456 /* StarWarsCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCD145720CA5F6A00137456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AFCD145920CA5F6A00137456 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AFCD145C20CA5F6A00137456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AFCD145F20CA5F6A00137456 /* StarWarsCharacters.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StarWarsCharacters.xcdatamodel; sourceTree = "<group>"; };
 		AFCD146120CA5F6A00137456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,6 +106,7 @@
 		AFCD147A20CA5F6A00137456 /* StarWarsCharactersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCharactersUITests.swift; sourceTree = "<group>"; };
 		AFCD147C20CA5F6A00137456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFCD148C20CA625100137456 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AFECBB5420D10E8D00D261BF /* EyeColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeColorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +134,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF000B2820D12BEB00951849 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				AFCD145720CA5F6A00137456 /* AppDelegate.swift */,
+				AF000B2920D12BFF00951849 /* Storyboard */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		AF000B2920D12BFF00951849 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Storyboard;
+			path = StarWarsCharacters/Storyboard;
+			sourceTree = SOURCE_ROOT;
+		};
+		AF000B2A20D12C0C00951849 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				AFCD145B20CA5F6A00137456 /* Main.storyboard */,
+				AFCD146320CA5F6A00137456 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		AF07CC4E20CCFA7900E9AD75 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,20 +267,18 @@
 		AFCD145620CA5F6A00137456 /* StarWarsCharacters */ = {
 			isa = PBXGroup;
 			children = (
+				AF000B2820D12BEB00951849 /* AppDelegate */,
 				AFCD149420CA654100137456 /* Model */,
 				AFCD149320CA654100137456 /* Controller */,
 				AFCD149020CA654000137456 /* View */,
 				AFCD149520CA654100137456 /* ViewModels */,
+				AF000B2A20D12C0C00951849 /* Storyboard */,
 				AF14B2FB20CB678100C2A62A /* Service */,
 				AF14B31320CB838000C2A62A /* Router */,
 				AF14B30520CB68E200C2A62A /* Utils */,
 				AFCD149120CA654000137456 /* Extension */,
 				AF07CC4E20CCFA7900E9AD75 /* Constants */,
-				AFCD145720CA5F6A00137456 /* AppDelegate.swift */,
-				AFCD145920CA5F6A00137456 /* ViewController.swift */,
-				AFCD145B20CA5F6A00137456 /* Main.storyboard */,
 				AFCD146120CA5F6A00137456 /* Assets.xcassets */,
-				AFCD146320CA5F6A00137456 /* LaunchScreen.storyboard */,
 				AFCD146620CA5F6A00137456 /* Info.plist */,
 				AFCD145E20CA5F6A00137456 /* StarWarsCharacters.xcdatamodeld */,
 			);
@@ -314,6 +338,7 @@
 			children = (
 				AF14B31620CB84B500C2A62A /* CharactersModel.swift */,
 				AF14B31B20CB982F00C2A62A /* PersonModel.swift */,
+				AFECBB5420D10E8D00D261BF /* EyeColorModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -467,13 +492,13 @@
 				AF14B31220CB7C6800C2A62A /* NetworkHandler.swift in Sources */,
 				AF1444A520CCBB55005FDFAD /* PersonViewController.swift in Sources */,
 				AF14B30820CB691900C2A62A /* Reachability.swift in Sources */,
-				AFCD145A20CA5F6A00137456 /* ViewController.swift in Sources */,
 				AF14B30220CB67C900C2A62A /* ErrorResult.swift in Sources */,
 				AF1444AF20CCC85F005FDFAD /* PersonCell.swift in Sources */,
 				AF14B30420CB681A00C2A62A /* ParserHelper.swift in Sources */,
 				AF1444AA20CCC589005FDFAD /* PersonViewModel.swift in Sources */,
 				AF1444A720CCBC59005FDFAD /* DynamicValue.swift in Sources */,
 				AF07CC5220CCFABE00E9AD75 /* UIColor.swift in Sources */,
+				AFECBB5520D10E8D00D261BF /* EyeColorModel.swift in Sources */,
 				AF14B31A20CB920F00C2A62A /* APIManager.swift in Sources */,
 				AFCD146020CA5F6A00137456 /* StarWarsCharacters.xcdatamodeld in Sources */,
 				AF14B30A20CB694600C2A62A /* ReachabilityError.swift in Sources */,
