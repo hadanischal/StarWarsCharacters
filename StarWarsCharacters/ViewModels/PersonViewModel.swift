@@ -12,13 +12,13 @@ struct PersonViewModel {
     weak var dataSource : GenericDataSource<PersonModel>?
     weak var service: CharactersRouterProtocol?
     var onErrorHandling : ((ErrorResult?) -> Void)?
-
+    
     init(service: CharactersRouterProtocol? = CharactersRouter.shared, dataSource : GenericDataSource<PersonModel>?) {
         self.dataSource = dataSource
         self.service = service 
     }
     
-    func setupServiceCall() {
+    func fetchServiceCall(_ completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
         guard let service = service else {
             onErrorHandling?(ErrorResult.custom(string: "Missing service"))
             return
