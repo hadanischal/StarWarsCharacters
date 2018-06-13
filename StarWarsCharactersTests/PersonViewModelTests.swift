@@ -11,7 +11,7 @@ import XCTest
 
 class PersonViewModelTests: XCTestCase {
     fileprivate class MockFeedsService: CharactersRouterProtocol {
-        var feedsData: CharactersModel?
+        var charactersData: CharactersModel?
         func fetchConverter(_ completion: @escaping ((Result<CharactersModel, ErrorResult>) -> Void)) {
             if let data = feedsData {
                 completion(Result.success(data))
@@ -39,5 +39,15 @@ class PersonViewModelTests: XCTestCase {
         super.tearDown()
     }
     
-
+    func testFetchCharacters() {
+        service.charactersData = CharactersModel(count: 1, next: nil, previous: nil, results: [])
+        viewModel.fetchServiceCall{ result in
+            switch result {
+            case .failure(_) :
+                XCTAssert(false, "ViewModel should not be able to fetch without service")
+            default: break
+            }
+        }
+    }
+    
 }
