@@ -29,6 +29,26 @@ class PersonDataSourceTests: XCTestCase {
         XCTAssertEqual(dataSource.numberOfSections(in: tableView), 1, "Expected one section in table view")
         XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 0, "Expected no cell in table view")
     }
+    
+    func getDataValue() ->[PersonModel]{
+        var responseResults = [PersonModel]()
+        guard let data = FileManager.readJson(forResource: "Person") else {
+            XCTAssert(false, "Can't get data from Person.json.json")
+            return responseResults
+        }
+        let completion : ((Result<CharactersModel, ErrorResult>) -> Void) = { result in
+            switch result {
+            case .failure(_):
+                XCTAssert(false, "Expected valid converter")
+            case .success(let converter):
+                print(converter)
+                responseResults = converter.results
+                break
+            }
+        }
+        ParserHelper.parse(data: data, completion: completion)
+        return responseResults
+    }
 }
 
 extension FileManager {
