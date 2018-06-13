@@ -36,8 +36,10 @@ class PersonViewModel {
                     self.dataSource?.data.value = converter.results
                     self.filteredResults = EyeColorModel.parseEyeColorArray(results: converter.results)
                     self.onFilteredResults?(self.filteredResults)
+                    completion?(Result.success(true))
                 case .failure(let error) :
                     self.onErrorHandling?(error)
+                    completion?(Result.failure(error))
                 }
             }
         }

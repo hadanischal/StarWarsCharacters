@@ -9,9 +9,11 @@
 import UIKit
 
 class PersonViewController: UIViewController {
-    fileprivate let segmentedInsets = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 5.0, right: 10.0)
     @IBOutlet weak var tableView : UITableView!
     var segmentedController: UISegmentedControl!
+    
+    fileprivate let segmentedInsets = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 5.0, right: 10.0)
+    fileprivate var activityIndicator : ActivityIndicator! = ActivityIndicator()
     private let refreshControl = UIRefreshControl()
     let dataSource = PersonDataSource()
     lazy var viewModel : PersonViewModel = {
@@ -24,7 +26,10 @@ class PersonViewController: UIViewController {
         self.setupUI()
         self.setupUIRefreshControl()
         self.setupViewModel()
-        self.viewModel.fetchServiceCall()
+        self.activityIndicator.start()
+        self.viewModel.fetchServiceCall{ result in
+            self.activityIndicator.stop()
+        }
     }
     
     func setupUI() {
@@ -75,7 +80,10 @@ class PersonViewController: UIViewController {
     }
     
     @objc private func refreshPeopleData(_ sender: Any) {
-        self.viewModel.fetchServiceCall()
+        self.activityIndicator.start()
+        self.viewModel.fetchServiceCall{ result in
+            self.activityIndicator.stop()
+        }
         self.refreshControl.endRefreshing()
     }
 }

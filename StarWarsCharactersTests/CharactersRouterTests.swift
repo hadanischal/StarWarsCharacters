@@ -15,7 +15,7 @@ class CharactersRouterTests: XCTestCase {
         let service : CharactersRouter! = CharactersRouter()
         service.fetchConverter{ (_) in
         }
-        service.cancelFetchCurrencies()
+        service.cancelFetchService()
         XCTAssertNil(service.task, "Expected task nil")
     }
 }
