@@ -18,7 +18,7 @@ class PersonDataSourceTests: XCTestCase {
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        dataSource = nil
         super.tearDown()
     }
     
