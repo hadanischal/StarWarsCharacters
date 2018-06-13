@@ -9,7 +9,6 @@
 import Foundation
 
 struct PersonViewModel {
-    
     weak var dataSource : GenericDataSource<PersonModel>?
     weak var service: CharactersRouterProtocol?
     var onErrorHandling : ((ErrorResult?) -> Void)?
@@ -28,6 +27,7 @@ struct PersonViewModel {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let converter) :
+                    //print(converter)
                     self.dataSource?.data.value = converter.results
                 case .failure(let error) :
                     self.onErrorHandling?(error)

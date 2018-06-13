@@ -40,8 +40,7 @@ extension CharactersModel : Parceable {
                 let foundItems = responseResults.filter { $0.eyeColor == eyeColor }
                 filteredResults[eyeColor] = foundItems
             }
-            
-            print(filteredResults)
+           // print(filteredResults)
             
             let conversion = CharactersModel(next: next, count: count, results: responseResults, eyeColorArray: eyeColorArray, filteredResults: filteredResults)
             return Result.success(conversion)
