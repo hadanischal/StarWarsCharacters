@@ -10,7 +10,6 @@ import Foundation
 
 protocol CharactersRouterProtocol: class {
     func fetchConverter(_ completion: @escaping ((Result<CharactersModel, ErrorResult>) -> Void))
-   // func fetchURL(url: String,_ completion: @escaping ((Result<CharactersModel, ErrorResult>) -> Void))
 }
 
 final class CharactersRouter: NetworkHandler, CharactersRouterProtocol {
@@ -30,13 +29,4 @@ final class CharactersRouter: NetworkHandler, CharactersRouterProtocol {
         task = nil
     }
 }
-
-//extension CharactersRouter{
-//    func fetchURL(url: String,_ completion: @escaping ((Result<CharactersModel, ErrorResult>) -> Void)) {
-//        let endpoint = URL(string: url)!
-//        self.cancelFetchService()
-//        task = NetworkService().loadData(url: endpoint, completion: self.networkResult(completion: completion))
-//    }
-//}
-
 
