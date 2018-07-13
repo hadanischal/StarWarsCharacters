@@ -44,7 +44,7 @@ class CharactersModelTests: XCTestCase {
             case .success(let converter):
                 XCTAssertEqual(converter.count, 87, "Expected 87 count")
                 XCTAssertEqual(converter.next, "https://swapi.co/api/people/?page=2", "Expected https://swapi.co/api/people/?page=2 next")
-                XCTAssertEqual(converter.previous, "https://swapi.co/api/people/?page=2", "Expected https://swapi.co/api/people/?page=2 previous")
+                XCTAssertEqual(converter.previous, "", "")
                 XCTAssertEqual(converter.results.count, 10, "Expected 10 results")
             }
         }

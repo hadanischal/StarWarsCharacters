@@ -244,6 +244,14 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		AF8B94D220F895B90015D3D9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AFCD146120CA5F6A00137456 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		AFCD144B20CA5F6A00137456 = {
 			isa = PBXGroup;
 			children = (
@@ -280,7 +288,7 @@
 				AF14B30520CB68E200C2A62A /* Utils */,
 				AFCD149120CA654000137456 /* Extension */,
 				AF07CC4E20CCFA7900E9AD75 /* Constants */,
-				AFCD146120CA5F6A00137456 /* Assets.xcassets */,
+				AF8B94D220F895B90015D3D9 /* Resources */,
 				AFCD146620CA5F6A00137456 /* Info.plist */,
 				AFCD145E20CA5F6A00137456 /* StarWarsCharacters.xcdatamodeld */,
 			);

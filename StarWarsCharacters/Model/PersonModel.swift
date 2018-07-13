@@ -17,13 +17,14 @@ struct PersonModel{
     let films: [String]?
     let urlString: String?
     
-    init(dictionary: [String: Any]) {
-        self.name = dictionary["name"] as? String ?? "unknown"
-        self.eyeColor = dictionary["eye_color"] as? String
-        self.birthYear = dictionary["birth_year"] as? String ?? "unknown"
-        self.gender = dictionary["gender"] as? String ?? "unknown"
-        self.homeworld = dictionary["homeworld"] as? String ?? "unknown"
-        self.films = dictionary["films"] as? [String] ?? []
-        self.urlString = dictionary["url"] as?  String ?? "unknown"
+    init?(json: [String: Any]?) {
+        guard let json = json else {return nil}
+        self.name = json["name"] as? String ?? "unknown"
+        self.eyeColor = json["eye_color"] as? String ?? ""
+        self.birthYear = json["birth_year"] as? String ?? "unknown"
+        self.gender = json["gender"] as? String ?? "unknown"
+        self.homeworld = json["homeworld"] as? String ?? "unknown"
+        self.films = json["films"] as? [String] ?? []
+        self.urlString = json["url"] as?  String ?? "unknown"
     }
 }

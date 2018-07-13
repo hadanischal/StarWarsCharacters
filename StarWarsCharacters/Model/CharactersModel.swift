@@ -13,22 +13,24 @@ struct CharactersModel {
     let next: String?
     let previous: String?
     let results: [PersonModel]
+    
+    init?(json: [String: Any]?) {
+        guard let json = json else {return nil}
+        count = json["count"] as? Int ?? 0
+        next = json["next"] as? String ?? ""
+        previous = json["previous"] as? String ?? ""
+        results = (json["results"] as? [[String: Any]] ?? []).compactMap{PersonModel(json: $0)}
+    }
 }
 
 extension CharactersModel : Parceable {
-    static func parseObject(dictionary: [String : AnyObject]) -> Result<CharactersModel, ErrorResult> {
-        print(dictionary)
-        if let next = dictionary["next"] as? String,
-            let previous = (dictionary["next"] ?? "unknown" as AnyObject) as? String,
-            let count = dictionary["count"] as? Int,
-            let personsArray = dictionary["results"] as? [AnyObject]{
-            var responseResults = [PersonModel]()
-            for personJSON in personsArray {
-                let currentData = PersonModel(dictionary: personJSON as! [String:Any])
-                responseResults.append(currentData)
+    static func parseObject(dictionary: [String : AnyObject]) -> Result<CharactersModel, ErrorResult>{
+        if let _ = dictionary["results"]{
+            guard let result = CharactersModel.init(json: dictionary)else{
+                return Result.failure(ErrorResult.parser(string: "Unable to parse conversion rate"))
             }
-            let conversion = CharactersModel(count: count, next: next, previous: previous, results: responseResults)
-            return Result.success(conversion)
+            return Result.success(result)
+            
         } else {
             return Result.failure(ErrorResult.parser(string: "Unable to parse conversion rate"))
         }
