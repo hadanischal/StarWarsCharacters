@@ -40,7 +40,12 @@ class PersonViewModelTests: XCTestCase {
     }
     
     func testFetchCharacters() {
-        service.charactersData = CharactersModel(count: 1, next: nil, previous: nil, results: [])
+        let dictionary:[String: Any] = [:]
+        guard let result = CharactersModel.init(json: dictionary)else{
+            XCTAssert(false, "ViewModel should not be able to fetch without CharactersModel")
+            return
+        }
+        service?.charactersData = result
         viewModel.fetchServiceCall{ result in
             switch result {
             case .failure(_) :
@@ -60,5 +65,5 @@ class PersonViewModelTests: XCTestCase {
             }
         }
     }
-
+    
 }
