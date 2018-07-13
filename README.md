@@ -17,7 +17,7 @@ This is a simple Demo project which aims to demonstate the  Star Wars Characters
 *  Please build an IPhone app that uses the free [Star Wars API](http://swapi.co) 
 
 ## Guidelines
-*  shows a list view of all Star Wars characters (people) with their names and eye-color.
+*  Shows a list view of all Star Wars characters (people) with their names and eye-color.
 *  Add a dynamic control (for example segment control) that filters the list by eye-color of people. This segment control should be scalable for the future, so should automatically show more elements when the api returns more eye-colors some day. Each segment should show the eye color and the amount of people, like:" green (12) "
 
 ## Additional Requirements
