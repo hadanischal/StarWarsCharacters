@@ -19,32 +19,32 @@ enum Method: String {
 
 struct APIManager {
     private static let baseURLString = "https://swapi.co/api/"
-    
+
     static var allFilmsURL: URL {
         return SWAPIURL(method: .allFilms)
     }
-    
+
     static var allPersonsURL: URL {
         return SWAPIURL(method: .allPersons)
     }
-    
+
     static var allPlanetsURL: URL {
         return SWAPIURL(method: .allPlanets)
     }
-    
+
     static var allSpeciesURL: URL {
         return SWAPIURL(method: .allSpecies)
     }
-    
+
     static var allStarshipsURL: URL {
         return SWAPIURL(method: .allStarships)
     }
-    
+
     static var allVehiclesURL: URL {
         return SWAPIURL(method: .allVehicles)
     }
-    
-    //MARK: -  General Methods
+
+    // MARK: - General Methods
     private static func SWAPIURL(method: Method) -> URL {
         let baseURL = URL(string: baseURLString)!
         let finalURL = URL(string: method.rawValue, relativeTo: baseURL)!

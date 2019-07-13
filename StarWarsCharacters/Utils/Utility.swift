@@ -8,17 +8,16 @@
 
 import Foundation
 
-protocol Utility{
+protocol Utility {
     func filterNil(_ value: AnyObject?) -> AnyObject?
 }
 
 struct Util {
-    
+
 }
 
-extension Util: Utility{
+extension Util: Utility {
     func filterNil(_ value: AnyObject?) -> AnyObject? {
         return ((value is NSNull || value == nil) ?  "" as AnyObject :  value)
     }
 }
-

@@ -8,15 +8,15 @@
 
 import Foundation
 
-struct PersonModel{
+struct PersonModel {
     let name: String?
     let eyeColor: String?
     let birthYear: String?
     let gender: String?
-    let homeworld : String?
+    let homeworld: String?
     let films: [String]?
     let urlString: String?
-    
+
     init?(json: [String: Any]?) {
         guard let json = json else {return nil}
         self.name = json["name"] as? String ?? "unknown"
