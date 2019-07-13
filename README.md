@@ -2,11 +2,11 @@
 
 ## Requirements:
 * iOS 11.0+
-* Xcode 9.4.1
-* Swift 4.1
+* Xcode 10.2.1
+* Swift 5.0
 
 ## Compatibility
-This demo is expected to be run using Swift 4.1 and Xcode 9.4.x.
+This demo is expected to be run using Swift 5.0 and Xcode 10.2.x.
 
 ## Objective:
 This is a simple Demo project which aims to demonstate the  Star Wars Characters using MVVM pattern in Swift.
