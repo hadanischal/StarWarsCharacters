@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PersonModel {
+struct PersonModel: Codable {
     let name: String?
     let eyeColor: String?
     let birthYear: String?
@@ -17,14 +17,25 @@ struct PersonModel {
     let films: [String]?
     let urlString: String?
 
-    init?(json: [String: Any]?) {
-        guard let json = json else {return nil}
-        self.name = json["name"] as? String ?? "unknown"
-        self.eyeColor = json["eye_color"] as? String ?? ""
-        self.birthYear = json["birth_year"] as? String ?? "unknown"
-        self.gender = json["gender"] as? String ?? "unknown"
-        self.homeworld = json["homeworld"] as? String ?? "unknown"
-        self.films = json["films"] as? [String] ?? []
-        self.urlString = json["url"] as?  String ?? "unknown"
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try container.decode(String?.self, forKey: .name)
+        eyeColor = try container.decode(String?.self, forKey: .eyeColor)
+        birthYear = try container.decode(String?.self, forKey: .birthYear)
+        gender = try container.decode(String?.self, forKey: .gender)
+        homeworld = try container.decode(String?.self, forKey: .homeworld)
+        films = try container.decode([String]?.self, forKey: .films)
+        urlString = try container.decode(String?.self, forKey: .urlString)
     }
+
+    private enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case eyeColor = "eye_color"
+        case birthYear = "birth_year"
+        case gender = "gender"
+        case homeworld = "homeworld"
+        case films = "films"
+        case urlString = "url"
+    }
+
 }

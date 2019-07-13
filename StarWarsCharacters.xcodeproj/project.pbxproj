@@ -49,6 +49,8 @@
 		AFD3A81C20D1580C0094EF7E /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD3A81B20D1580C0094EF7E /* ActivityIndicator.swift */; };
 		AFECBB5520D10E8D00D261BF /* EyeColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFECBB5420D10E8D00D261BF /* EyeColorModel.swift */; };
 		AFF9EE8322D97F1D00BEA7F0 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AFF9EE8222D97F1D00BEA7F0 /* .swiftlint.yml */; };
+		AFF9EE8622D9FCFD00BEA7F0 /* MockCharactersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF9EE8522D9FCFD00BEA7F0 /* MockCharactersRouter.swift */; };
+		AFF9EE8822D9FDA200BEA7F0 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF9EE8722D9FDA200BEA7F0 /* MockData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,8 @@
 		AFD3A81B20D1580C0094EF7E /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		AFECBB5420D10E8D00D261BF /* EyeColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeColorModel.swift; sourceTree = "<group>"; };
 		AFF9EE8222D97F1D00BEA7F0 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		AFF9EE8522D9FCFD00BEA7F0 /* MockCharactersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharactersRouter.swift; sourceTree = "<group>"; };
+		AFF9EE8722D9FDA200BEA7F0 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		B33A1C16D1B926C8DC4D3B25 /* Pods-StarWarsCharacters.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsCharacters.debug.xcconfig"; path = "Target Support Files/Pods-StarWarsCharacters/Pods-StarWarsCharacters.debug.xcconfig"; sourceTree = "<group>"; };
 		B593386013AEE823B568CEC3 /* Pods-StarWarsCharactersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsCharactersTests.debug.xcconfig"; path = "Target Support Files/Pods-StarWarsCharactersTests/Pods-StarWarsCharactersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C260ADA614134C0678F0FA11 /* Pods-StarWarsCharacters.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsCharacters.release.xcconfig"; path = "Target Support Files/Pods-StarWarsCharacters/Pods-StarWarsCharacters.release.xcconfig"; sourceTree = "<group>"; };
@@ -341,7 +345,8 @@
 		AFCD146E20CA5F6A00137456 /* StarWarsCharactersTests */ = {
 			isa = PBXGroup;
 			children = (
-				AF4347F320D0F3FF00C12EAB /* Person.json */,
+				AFF9EE8B22DA081000BEA7F0 /* MockResources */,
+				AFF9EE8422D9FCDC00BEA7F0 /* MockClass */,
 				AF4347E920D0F33300C12EAB /* PersonViewModelTests.swift */,
 				AF4347EB20D0F34900C12EAB /* PersonDataSourceTests.swift */,
 				AF4347ED20D0F39E00C12EAB /* CharactersRouterTests.swift */,
@@ -403,6 +408,23 @@
 				AF1444AC20CCC715005FDFAD /* PersonDataSource.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AFF9EE8422D9FCDC00BEA7F0 /* MockClass */ = {
+			isa = PBXGroup;
+			children = (
+				AFF9EE8522D9FCFD00BEA7F0 /* MockCharactersRouter.swift */,
+				AFF9EE8722D9FDA200BEA7F0 /* MockData.swift */,
+			);
+			path = MockClass;
+			sourceTree = "<group>";
+		};
+		AFF9EE8B22DA081000BEA7F0 /* MockResources */ = {
+			isa = PBXGroup;
+			children = (
+				AF4347F320D0F3FF00C12EAB /* Person.json */,
+			);
+			path = MockResources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -653,7 +675,9 @@
 				AFCD147020CA5F6A00137456 /* StarWarsCharactersTests.swift in Sources */,
 				AF4347F220D0F3D000C12EAB /* PersonViewControllerTests.swift in Sources */,
 				AF4347EC20D0F34900C12EAB /* PersonDataSourceTests.swift in Sources */,
+				AFF9EE8622D9FCFD00BEA7F0 /* MockCharactersRouter.swift in Sources */,
 				AF4347F020D0F3B400C12EAB /* CharactersModelTests.swift in Sources */,
+				AFF9EE8822D9FDA200BEA7F0 /* MockData.swift in Sources */,
 				AF4347EE20D0F39E00C12EAB /* CharactersRouterTests.swift in Sources */,
 				AF4347EA20D0F33300C12EAB /* PersonViewModelTests.swift in Sources */,
 			);

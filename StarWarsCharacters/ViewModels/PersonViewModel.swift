@@ -33,10 +33,15 @@ class PersonViewModel {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let converter) :
-                    self.dataSource?.data.value = converter.results
-                    self.filteredResults = EyeColorModel.parseEyeColorArray(results: converter.results)
-                    self.onFilteredResults?(self.filteredResults)
-                    completion?(Result.success(true))
+                    if let results = converter.results {
+                        self.dataSource?.data.value = results
+                        self.filteredResults = EyeColorModel.parseEyeColorArray(results: results)
+                        self.onFilteredResults?(self.filteredResults)
+                        completion?(Result.success(true))
+                    } else {
+                        self.onErrorHandling?(ErrorResult.parser(string: "unable to parse"))
+                        completion?(Result.failure(ErrorResult.parser(string: "unable to parse")))
+                    }
                 case .failure(let error) :
                     self.onErrorHandling?(error)
                     completion?(Result.failure(error))
