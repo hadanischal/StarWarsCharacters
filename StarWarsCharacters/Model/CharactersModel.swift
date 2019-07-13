@@ -8,31 +8,20 @@
 
 import Foundation
 
-struct CharactersModel {
+struct CharactersModel: Codable {
     let count: Int?
     let next: String?
     let previous: String?
-    let results: [PersonModel]
-
-    init?(json: [String: Any]?) {
-        guard let json = json else {return nil}
-        count = json["count"] as? Int ?? 0
-        next = json["next"] as? String ?? ""
-        previous = json["previous"] as? String ?? ""
-        results = (json["results"] as? [[String: Any]] ?? []).compactMap {PersonModel(json: $0)}
-    }
+    let results: [PersonModel]?
 }
 
 extension CharactersModel: Parceable {
-    static func parseObject(dictionary: [String: AnyObject]) -> Result<CharactersModel, ErrorResult> {
-        if let _ = dictionary["results"] {
-            guard let result = CharactersModel.init(json: dictionary)else {
-                return Result.failure(ErrorResult.parser(string: "Unable to parse conversion rate"))
-            }
+    static func parseObject(data: Data) -> Result<CharactersModel, ErrorResult> {
+        let decoder = JSONDecoder()
+        if let result = try? decoder.decode(CharactersModel.self, from: data) {
             return Result.success(result)
-
         } else {
-            return Result.failure(ErrorResult.parser(string: "Unable to parse conversion rate"))
+            return Result.failure(ErrorResult.parser(string: "Unable to parse flickr results"))
         }
     }
 }

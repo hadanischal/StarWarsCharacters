@@ -12,7 +12,7 @@ struct EyeColorModel {
     let eyeColorArray: [String]
     let filteredResults: [String: [PersonModel]]
 }
-
+//TODO:- Rethink this logic
 extension EyeColorModel {
     static func parseEyeColorArray(results: [PersonModel]) -> EyeColorModel {
         var filteredResults = [String: [PersonModel]]()

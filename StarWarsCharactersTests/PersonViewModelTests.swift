@@ -10,24 +10,13 @@ import XCTest
 @testable import StarWarsCharacters
 
 class PersonViewModelTests: XCTestCase {
-    fileprivate class MockFeedsService: CharactersRouterProtocol {
-        var charactersData: CharactersModel?
-        func fetchConverter(_ completion: @escaping ((Result<CharactersModel, ErrorResult>) -> Void)) {
-            if let data = charactersData {
-                completion(Result.success(data))
-            } else {
-                completion(Result.failure(ErrorResult.custom(string: "No converter")))
-            }
-        }
-    }
-
     var viewModel: PersonViewModel!
     var dataSource: GenericDataSource<PersonModel>!
-    fileprivate var service: MockFeedsService!
+    fileprivate var service: MockCharactersRouter!
 
     override func setUp() {
         super.setUp()
-        self.service = MockFeedsService()
+        self.service = MockCharactersRouter()
         self.dataSource = GenericDataSource<PersonModel>()
         self.viewModel = PersonViewModel(service: service, dataSource: dataSource)
     }
@@ -40,8 +29,8 @@ class PersonViewModelTests: XCTestCase {
     }
 
     func testFetchCharacters() {
-        let dictionary: [String: Any] = [:]
-        guard let result = CharactersModel.init(json: dictionary)else {
+        let characterData = MockData().getCharactersModel()
+        guard let result = characterData else {
             XCTAssert(false, "ViewModel should not be able to fetch without CharactersModel")
             return
         }

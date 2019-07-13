@@ -19,6 +19,7 @@ final class CharactersRouter: NetworkHandler, CharactersRouterProtocol {
 
     func fetchConverter(_ completion: @escaping ((Result<CharactersModel, ErrorResult>) -> Void)) {
         self.cancelFetchService()
+        print(endpoint.absoluteString)
         task = NetworkService().loadData(url: endpoint, completion: self.networkResult(completion: completion))
     }
 

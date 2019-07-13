@@ -31,8 +31,8 @@ class PersonDataSourceTests: XCTestCase {
     }
 
     func testValueInDataSource() {
-        if getDataValue().count != 0 {
-            let responseResults: [PersonModel] = getDataValue()
+        if let results = MockData().getPersonModel() {
+            let responseResults: [PersonModel] = results
             let newArray = Array(responseResults[0..<2])
             dataSource.data.value = newArray
             let tableView = UITableView()
@@ -42,39 +42,5 @@ class PersonDataSourceTests: XCTestCase {
         } else {
             XCTAssert(false, "Can't get data from FileManager")
         }
-    }
-
-    func getDataValue() -> [PersonModel] {
-        var responseResults = [PersonModel]()
-        guard let data = FileManager.readJson(forResource: "Person") else {
-            XCTAssert(false, "Can't get data from Person.json")
-            return responseResults
-        }
-        let completion: ((Result<CharactersModel, ErrorResult>) -> Void) = { result in
-            switch result {
-            case .failure:
-                XCTAssert(false, "Expected valid converter")
-            case .success(let converter):
-                print(converter)
-                responseResults = converter.results
-                break
-            }
-        }
-        ParserHelper.parse(data: data, completion: completion)
-        return responseResults
-    }
-}
-
-extension FileManager {
-    static func readJson(forResource fileName: String ) -> Data? {
-        let bundle = Bundle(for: PersonDataSourceTests.self)
-        if let path = bundle.path(forResource: fileName, ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                return data
-            } catch {
-            }
-        }
-        return nil
     }
 }
