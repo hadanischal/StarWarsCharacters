@@ -10,10 +10,10 @@ import XCTest
 @testable import StarWarsCharacters
 
 class CharactersRouterTests: XCTestCase {
-    
+
     func testCancelRequest() {
-        let service : CharactersRouter! = CharactersRouter()
-        service.fetchConverter{ (_) in
+        let service: CharactersRouter! = CharactersRouter()
+        service.fetchConverter { (_) in
         }
         service.cancelFetchService()
         XCTAssertNil(service.task, "Expected task nil")

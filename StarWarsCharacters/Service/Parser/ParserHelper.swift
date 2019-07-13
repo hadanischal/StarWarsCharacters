@@ -13,15 +13,15 @@ protocol Parceable {
 }
 
 final class ParserHelper {
-    static func parse<T: Parceable>(data: Data, completion : (Result<[T], ErrorResult>) -> Void) {
+    static func parse<T: Parceable>(data: Data, completion: (Result<[T], ErrorResult>) -> Void) {
         do {
             if let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [AnyObject] {
                 print(result)
-                var finalResult : [T] = []
+                var finalResult: [T] = []
                 for object in result {
-                    if let dictionary = object as? [String : AnyObject] {
+                    if let dictionary = object as? [String: AnyObject] {
                         switch T.parseObject(dictionary: dictionary) {
-                        case .failure(_):
+                        case .failure:
                             continue
                         case .success(let newModel):
                             finalResult.append(newModel)
@@ -37,8 +37,8 @@ final class ParserHelper {
             completion(.failure(.parser(string: "Error while parsing json data")))
         }
     }
-    
-    static func parse<T: Parceable>(data: Data, completion : (Result<T, ErrorResult>) -> Void) {
+
+    static func parse<T: Parceable>(data: Data, completion: (Result<T, ErrorResult>) -> Void) {
         do {
             if let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: AnyObject] {
                 switch T.parseObject(dictionary: dictionary) {

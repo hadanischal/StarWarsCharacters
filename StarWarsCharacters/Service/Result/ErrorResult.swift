@@ -13,4 +13,3 @@ enum ErrorResult: Error {
     case parser(string: String)
     case custom(string: String)
 }
-

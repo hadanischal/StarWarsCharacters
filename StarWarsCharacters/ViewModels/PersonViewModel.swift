@@ -10,20 +10,20 @@ import Foundation
 
 class PersonViewModel {
     // MARK: - Input
-    weak var dataSource : GenericDataSource<PersonModel>?
-    var filteredResults:EyeColorModel
-    
+    weak var dataSource: GenericDataSource<PersonModel>?
+    var filteredResults: EyeColorModel
+
     // MARK: - Output
     weak var service: CharactersRouterProtocol?
-    var onErrorHandling : ((ErrorResult?) -> Void)?
-    var onFilteredResults : ((EyeColorModel?) -> Void)?
-    
-    init(service: CharactersRouterProtocol? = CharactersRouter.shared, dataSource : GenericDataSource<PersonModel>?) {
+    var onErrorHandling: ((ErrorResult?) -> Void)?
+    var onFilteredResults: ((EyeColorModel?) -> Void)?
+
+    init(service: CharactersRouterProtocol? = CharactersRouter.shared, dataSource: GenericDataSource<PersonModel>?) {
         self.dataSource = dataSource
         self.filteredResults =  EyeColorModel(eyeColorArray: [], filteredResults: [:])
         self.service = service
     }
-    
+
     func fetchServiceCall(_ completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
         guard let service = service else {
             onErrorHandling?(ErrorResult.custom(string: "Missing service"))
@@ -44,10 +44,10 @@ class PersonViewModel {
             }
         }
     }
-       
+
     func didSelectSegment(_ segmentIndex: Int) {
         let eyeColorArray: [String] = self.filteredResults.eyeColorArray
-        let filteredResults: [String : [PersonModel]] = self.filteredResults.filteredResults
+        let filteredResults: [String: [PersonModel]] = self.filteredResults.filteredResults
         let eyeColor = eyeColorArray[segmentIndex]
         self.dataSource?.data.value = filteredResults[eyeColor]!
     }

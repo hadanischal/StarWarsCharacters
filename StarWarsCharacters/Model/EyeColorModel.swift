@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct EyeColorModel{
+struct EyeColorModel {
     let eyeColorArray: [String]
-    let filteredResults: [String : [PersonModel]]
+    let filteredResults: [String: [PersonModel]]
 }
 
 extension EyeColorModel {
     static func parseEyeColorArray(results: [PersonModel]) -> EyeColorModel {
-        var filteredResults = [String : [PersonModel]]()
+        var filteredResults = [String: [PersonModel]]()
         let mapEyeColor = results.map { $0.eyeColor } as! [String]
         var eyeColorArray = mapEyeColor.removingDuplicates()
         for eyeColor in eyeColorArray {

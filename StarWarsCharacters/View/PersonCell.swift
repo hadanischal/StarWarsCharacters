@@ -12,7 +12,7 @@ class PersonCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
 
-    var personModel : PersonModel? {
+    var personModel: PersonModel? {
         didSet {
             guard let data = personModel else {
                 return

@@ -15,7 +15,7 @@ extension Array where Element: Hashable {
             addedDict.updateValue(true, forKey: $0) == nil
         }
     }
-    
+
     mutating func removeDuplicates() {
         self = self.removingDuplicates()
     }
