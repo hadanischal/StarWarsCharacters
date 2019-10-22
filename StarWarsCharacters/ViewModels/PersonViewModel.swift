@@ -8,7 +8,14 @@
 
 import Foundation
 
-class PersonViewModel {
+protocol PersonViewModelProtocol {
+    var onErrorHandling: ((ErrorResult?) -> Void)? { get set }
+    func didSelectSegment(_ segmentIndex: Int)
+    func fetchServiceCall(_ completion: ((Result<Bool, ErrorResult>) -> Void)?)
+    var onFilteredResults: ((EyeColorModel?) -> Void)? { get set }
+}
+
+final class PersonViewModel: PersonViewModelProtocol {
     // MARK: - Input
     weak var dataSource: GenericDataSource<PersonModel>?
     var filteredResults: EyeColorModel

@@ -16,7 +16,7 @@ class PersonViewController: UIViewController {
     fileprivate var activityIndicator: ActivityIndicator! = ActivityIndicator()
     private let refreshControl = UIRefreshControl()
     let dataSource = PersonDataSource()
-    lazy var viewModel: PersonViewModel = {
+    lazy var viewModel: PersonViewModelProtocol = {
         let viewModel = PersonViewModel(dataSource: dataSource)
         return viewModel
     }()
