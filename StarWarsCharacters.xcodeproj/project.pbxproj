@@ -10,6 +10,13 @@
 		042CAC91235DAB8F000B09D7 /* GenderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042CAC90235DAB8F000B09D7 /* GenderModel.swift */; };
 		042CAC95235DAD32000B09D7 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042CAC94235DAD32000B09D7 /* ReusableView.swift */; };
 		042CAC98235DAD7A000B09D7 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042CAC97235DAD7A000B09D7 /* UITableView+Extensions.swift */; };
+		043F9188235F13AC00062D21 /* SegmentioBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F9187235F13AC00062D21 /* SegmentioBuilder.swift */; };
+		043F918A235F15A500062D21 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F9189235F15A500062D21 /* FontExtension.swift */; };
+		043F918F235F15F500062D21 /* source-sans-pro.regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 043F918C235F15F500062D21 /* source-sans-pro.regular.ttf */; };
+		043F9190235F15F500062D21 /* source-sans-pro.light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 043F918D235F15F500062D21 /* source-sans-pro.light.ttf */; };
+		043F9191235F15F500062D21 /* source-sans-pro.bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 043F918E235F15F500062D21 /* source-sans-pro.bold.ttf */; };
+		043F919A235F2EB100062D21 /* ImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F9199235F2EB100062D21 /* ImageView+Extension.swift */; };
+		043F919C235F321F00062D21 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F919B235F321F00062D21 /* NibLoadableView.swift */; };
 		1217A4F105F6BEE5A372DCFF /* Pods_StarWarsCharactersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751EF17E5BA90329D974D8EF /* Pods_StarWarsCharactersUITests.framework */; };
 		1776FA3BF0A49F387B0EEEE9 /* Pods_StarWarsCharacters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383A3D9BD5EEC972812A044F /* Pods_StarWarsCharacters.framework */; };
 		6F7A43389315E24A7FA43903 /* Pods_StarWarsCharactersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC4F88C70D20FD7234D092DF /* Pods_StarWarsCharactersTests.framework */; };
@@ -77,6 +84,13 @@
 		042CAC90235DAB8F000B09D7 /* GenderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderModel.swift; sourceTree = "<group>"; };
 		042CAC94235DAD32000B09D7 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		042CAC97235DAD7A000B09D7 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		043F9187235F13AC00062D21 /* SegmentioBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentioBuilder.swift; sourceTree = "<group>"; };
+		043F9189235F15A500062D21 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
+		043F918C235F15F500062D21 /* source-sans-pro.regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "source-sans-pro.regular.ttf"; sourceTree = "<group>"; };
+		043F918D235F15F500062D21 /* source-sans-pro.light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "source-sans-pro.light.ttf"; sourceTree = "<group>"; };
+		043F918E235F15F500062D21 /* source-sans-pro.bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "source-sans-pro.bold.ttf"; sourceTree = "<group>"; };
+		043F9199235F2EB100062D21 /* ImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Extension.swift"; sourceTree = "<group>"; };
+		043F919B235F321F00062D21 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 		383A3D9BD5EEC972812A044F /* Pods_StarWarsCharacters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWarsCharacters.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CECE94B8BDAB5030AB2F130 /* Pods-StarWarsCharactersUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsCharactersUITests.debug.xcconfig"; path = "Target Support Files/Pods-StarWarsCharactersUITests/Pods-StarWarsCharactersUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E1AD7816D921A5300308927 /* Pods-StarWarsCharactersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsCharactersUITests.release.xcconfig"; path = "Target Support Files/Pods-StarWarsCharactersUITests/Pods-StarWarsCharactersUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				042CAC94235DAD32000B09D7 /* ReusableView.swift */,
+				043F919B235F321F00062D21 /* NibLoadableView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -177,8 +192,36 @@
 				AF07CC4F20CCFAA000E9AD75 /* ColourConstant.swift */,
 				AF07CC5120CCFABE00E9AD75 /* UIColor.swift */,
 				042CAC97235DAD7A000B09D7 /* UITableView+Extensions.swift */,
+				043F9189235F15A500062D21 /* FontExtension.swift */,
+				043F9199235F2EB100062D21 /* ImageView+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		043F9186235F139B00062D21 /* SegmentioBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				043F9187235F13AC00062D21 /* SegmentioBuilder.swift */,
+			);
+			path = SegmentioBuilder;
+			sourceTree = "<group>";
+		};
+		043F918B235F15F500062D21 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				043F918C235F15F500062D21 /* source-sans-pro.regular.ttf */,
+				043F918D235F15F500062D21 /* source-sans-pro.light.ttf */,
+				043F918E235F15F500062D21 /* source-sans-pro.bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		043F9194235F2C2100062D21 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AF1444AE20CCC85F005FDFAD /* PersonCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		162F881E1907BAEA1DFC771A /* Frameworks */ = {
@@ -263,6 +306,7 @@
 		AF14B30520CB68E200C2A62A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				043F9186235F139B00062D21 /* SegmentioBuilder */,
 				AF5C277320D1DE640077381D /* Utils */,
 				042CAC96235DAD6B000B09D7 /* Extension */,
 				AF14B31D20CBA0E100C2A62A /* Utility.swift */,
@@ -309,6 +353,7 @@
 		AF8B94D220F895B90015D3D9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				043F918B235F15F500062D21 /* Fonts */,
 				AFCD146120CA5F6A00137456 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -385,8 +430,8 @@
 		AFCD149020CA654000137456 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				043F9194235F2C2100062D21 /* TableViewCell */,
 				042CAC93235DAD23000B09D7 /* CustomViews */,
-				AF1444AE20CCC85F005FDFAD /* PersonCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -448,6 +493,7 @@
 				AFCD145120CA5F6A00137456 /* Frameworks */,
 				AFCD145220CA5F6A00137456 /* Resources */,
 				042CAC92235DACD6000B09D7 /* Run Swiftlint Script */,
+				E1A1A329CF1F8C8A859F8A10 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -552,9 +598,12 @@
 			files = (
 				AFF9EE8322D97F1D00BEA7F0 /* .swiftlint.yml in Resources */,
 				AFCD148D20CA625100137456 /* .gitignore in Resources */,
+				043F918F235F15F500062D21 /* source-sans-pro.regular.ttf in Resources */,
 				AFCD146520CA5F6A00137456 /* LaunchScreen.storyboard in Resources */,
+				043F9191235F15F500062D21 /* source-sans-pro.bold.ttf in Resources */,
 				AFCD146220CA5F6A00137456 /* Assets.xcassets in Resources */,
 				AFCD145D20CA5F6A00137456 /* Main.storyboard in Resources */,
+				043F9190235F15F500062D21 /* source-sans-pro.light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,6 +709,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E1A1A329CF1F8C8A859F8A10 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StarWarsCharacters/Pods-StarWarsCharacters-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Segmentio.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StarWarsCharacters/Pods-StarWarsCharacters-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -667,19 +736,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043F919A235F2EB100062D21 /* ImageView+Extension.swift in Sources */,
 				AF14B31020CB7BA900C2A62A /* NetworkService.swift in Sources */,
 				AF14B31220CB7C6800C2A62A /* NetworkHandler.swift in Sources */,
 				AF1444A520CCBB55005FDFAD /* PersonViewController.swift in Sources */,
 				AF14B30820CB691900C2A62A /* Reachability.swift in Sources */,
 				AFD3A81C20D1580C0094EF7E /* ActivityIndicator.swift in Sources */,
+				043F9188235F13AC00062D21 /* SegmentioBuilder.swift in Sources */,
 				AF14B30220CB67C900C2A62A /* ErrorResult.swift in Sources */,
 				042CAC91235DAB8F000B09D7 /* GenderModel.swift in Sources */,
 				AF1444AF20CCC85F005FDFAD /* PersonCell.swift in Sources */,
+				043F918A235F15A500062D21 /* FontExtension.swift in Sources */,
 				AF14B30420CB681A00C2A62A /* ParserHelper.swift in Sources */,
 				AF1444AA20CCC589005FDFAD /* PersonViewModel.swift in Sources */,
 				AF1444A720CCBC59005FDFAD /* DynamicValue.swift in Sources */,
 				AF07CC5220CCFABE00E9AD75 /* UIColor.swift in Sources */,
 				AFECBB5520D10E8D00D261BF /* EyeColorModel.swift in Sources */,
+				043F919C235F321F00062D21 /* NibLoadableView.swift in Sources */,
 				AF14B31A20CB920F00C2A62A /* APIManager.swift in Sources */,
 				AFCD146020CA5F6A00137456 /* StarWarsCharacters.xcdatamodeld in Sources */,
 				AF14B30A20CB694600C2A62A /* ReachabilityError.swift in Sources */,
@@ -807,7 +880,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -860,7 +933,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -875,7 +948,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = StarWarsCharacters/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Nischalhada.StarWarsCharacters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -891,7 +964,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = StarWarsCharacters/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Nischalhada.StarWarsCharacters;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum ThemeColor {
+extension UIColor {
     static var primary: UIColor {
         return UIColor(red: 0.122, green: 0.737, blue: 0.824, alpha: 1.00)
     }
@@ -33,22 +33,6 @@ enum ThemeColor {
         return UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 1)
     }
 
-    static var white: UIColor {
-        return UIColor.white
-    }
-
-    static var blue: UIColor {
-        return UIColor(rgb: 0x0a52c6)
-    }
-
-    static var green: UIColor {
-        return UIColor(rgb: 0x62d45a)
-    }
-
-    static var red: UIColor {
-        return UIColor(rgb: 0xcf363c)
-    }
-
     static var buttonBackgroundColor: UIColor {
         return UIColor(red: 0.122, green: 0.737, blue: 0.824, alpha: 1.00)
     }
@@ -68,8 +52,26 @@ enum ThemeColor {
     static var placeholderColor: UIColor {
         return UIColor(rgb: 0xeef0f1)
     }
-
-    static var dimBlackColor: UIColor {
-        return UIColor(rgb: 0x141414)
+    static var titleColor: UIColor {
+        return UIColor.black
     }
+    static var descriptionColor: UIColor {
+        return UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
+    }
+    static var segmentSelectedTitle: UIColor {
+        return UIColor.black
+    }
+    static var segmentDefaultTitle: UIColor {
+        return UIColor.darkGray
+    }
+    static var segmentIndicator: UIColor {
+        return UIColor(rgb: 0xEf8136)
+    }
+    static var segmentSeparator: UIColor {
+        return UIColor(rgb: 0xDDDDDD)
+    }
+    static var segmentBadge: UIColor {
+        return UIColor(rgb: 0xf46f60)
+    }
+
 }

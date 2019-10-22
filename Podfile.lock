@@ -1,16 +1,27 @@
 PODS:
+  - Kingfisher (5.8.3):
+    - Kingfisher/Core (= 5.8.3)
+  - Kingfisher/Core (5.8.3)
+  - Segmentio (4.1)
   - SwiftLint (0.33.1)
 
 DEPENDENCIES:
+  - Kingfisher (~> 5.0)
+  - Segmentio
   - SwiftLint
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - SwiftLint
+  trunk:
+    - Kingfisher
+    - Segmentio
 
 SPEC CHECKSUMS:
+  Kingfisher: b7e4cb65ff24c264bd2a1284b75b974d907afd94
+  Segmentio: ab29def64e1bff6e6e9b97671788a99bed3f1d9f
   SwiftLint: 9fc1143bbacec37f94994a7d0d2a85b2154b6294
 
-PODFILE CHECKSUM: 1e73457f64f227a35650cf92e90e3a5f03081494
+PODFILE CHECKSUM: b227afce64453a33bf008d7c1797a9b95caf0d06
 
-COCOAPODS: 1.7.4
+COCOAPODS: 1.8.3
