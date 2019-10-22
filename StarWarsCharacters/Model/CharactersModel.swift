@@ -9,8 +9,8 @@
 import Foundation
 
 struct CharactersModel: Codable {
-    let count: Int?
-    let next: String?
+    let count: Int
+    let next: String
     let previous: String?
     let results: [PersonModel]?
 }
@@ -18,6 +18,7 @@ struct CharactersModel: Codable {
 extension CharactersModel: Parceable {
     static func parseObject(data: Data) -> Result<CharactersModel, ErrorResult> {
         let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
         if let result = try? decoder.decode(CharactersModel.self, from: data) {
             return Result.success(result)
         } else {

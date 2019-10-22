@@ -24,7 +24,6 @@ class MockData {
             case .success(let converter):
                 print(converter)
                 info =  converter
-                break
             }
         }
         ParserHelper.parse(data: data, completion: completion)

@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042CAC91235DAB8F000B09D7 /* GenderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042CAC90235DAB8F000B09D7 /* GenderModel.swift */; };
+		042CAC95235DAD32000B09D7 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042CAC94235DAD32000B09D7 /* ReusableView.swift */; };
+		042CAC98235DAD7A000B09D7 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042CAC97235DAD7A000B09D7 /* UITableView+Extensions.swift */; };
 		1217A4F105F6BEE5A372DCFF /* Pods_StarWarsCharactersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751EF17E5BA90329D974D8EF /* Pods_StarWarsCharactersUITests.framework */; };
 		1776FA3BF0A49F387B0EEEE9 /* Pods_StarWarsCharacters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383A3D9BD5EEC972812A044F /* Pods_StarWarsCharacters.framework */; };
 		6F7A43389315E24A7FA43903 /* Pods_StarWarsCharactersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC4F88C70D20FD7234D092DF /* Pods_StarWarsCharactersTests.framework */; };
-		AF07CC5020CCFAA000E9AD75 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF07CC4F20CCFAA000E9AD75 /* ThemeColor.swift */; };
+		AF07CC5020CCFAA000E9AD75 /* ColourConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF07CC4F20CCFAA000E9AD75 /* ColourConstant.swift */; };
 		AF07CC5220CCFABE00E9AD75 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF07CC5120CCFABE00E9AD75 /* UIColor.swift */; };
 		AF07CC5620CCFD2600E9AD75 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF07CC5520CCFD2600E9AD75 /* Wireframe.swift */; };
 		AF1444A520CCBB55005FDFAD /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1444A420CCBB55005FDFAD /* PersonViewController.swift */; };
@@ -71,11 +74,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		042CAC90235DAB8F000B09D7 /* GenderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderModel.swift; sourceTree = "<group>"; };
+		042CAC94235DAD32000B09D7 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		042CAC97235DAD7A000B09D7 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		383A3D9BD5EEC972812A044F /* Pods_StarWarsCharacters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWarsCharacters.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CECE94B8BDAB5030AB2F130 /* Pods-StarWarsCharactersUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsCharactersUITests.debug.xcconfig"; path = "Target Support Files/Pods-StarWarsCharactersUITests/Pods-StarWarsCharactersUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E1AD7816D921A5300308927 /* Pods-StarWarsCharactersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsCharactersUITests.release.xcconfig"; path = "Target Support Files/Pods-StarWarsCharactersUITests/Pods-StarWarsCharactersUITests.release.xcconfig"; sourceTree = "<group>"; };
 		751EF17E5BA90329D974D8EF /* Pods_StarWarsCharactersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWarsCharactersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF07CC4F20CCFAA000E9AD75 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
+		AF07CC4F20CCFAA000E9AD75 /* ColourConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourConstant.swift; sourceTree = "<group>"; };
 		AF07CC5120CCFABE00E9AD75 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		AF07CC5520CCFD2600E9AD75 /* Wireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		AF1444A420CCBB55005FDFAD /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +163,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		042CAC93235DAD23000B09D7 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				042CAC94235DAD32000B09D7 /* ReusableView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		042CAC96235DAD6B000B09D7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AF07CC4F20CCFAA000E9AD75 /* ColourConstant.swift */,
+				AF07CC5120CCFABE00E9AD75 /* UIColor.swift */,
+				042CAC97235DAD7A000B09D7 /* UITableView+Extensions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		162F881E1907BAEA1DFC771A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,15 +221,7 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		AF07CC4E20CCFA7900E9AD75 /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				AF07CC4F20CCFAA000E9AD75 /* ThemeColor.swift */,
-			);
-			path = Constants;
-			sourceTree = "<group>";
-		};
-		AF14B2FB20CB678100C2A62A /* Service */ = {
+		AF14B2FB20CB678100C2A62A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				AF14B30620CB690600C2A62A /* Reachability */,
@@ -214,7 +230,7 @@
 				AF14B2FD20CB678100C2A62A /* Network */,
 				AF14B2FE20CB678100C2A62A /* Parser */,
 			);
-			path = Service;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		AF14B2FC20CB678100C2A62A /* Result */ = {
@@ -244,13 +260,15 @@
 			path = Parser;
 			sourceTree = "<group>";
 		};
-		AF14B30520CB68E200C2A62A /* Utils */ = {
+		AF14B30520CB68E200C2A62A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				AF5C277320D1DE640077381D /* Utils */,
+				042CAC96235DAD6B000B09D7 /* Extension */,
 				AF14B31D20CBA0E100C2A62A /* Utility.swift */,
 				AFA94CF720CFE5BE0041B97E /* Array.swift */,
 			);
-			path = Utils;
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		AF14B30620CB690600C2A62A /* Reachability */ = {
@@ -262,12 +280,12 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
-		AF14B31320CB838000C2A62A /* Router */ = {
+		AF14B31320CB838000C2A62A /* APIWrappers */ = {
 			isa = PBXGroup;
 			children = (
 				AF14B31420CB83DF00C2A62A /* CharactersRouter.swift */,
 			);
-			path = Router;
+			path = APIWrappers;
 			sourceTree = "<group>";
 		};
 		AF14B31820CB920000C2A62A /* APIManager */ = {
@@ -278,14 +296,14 @@
 			path = APIManager;
 			sourceTree = "<group>";
 		};
-		AF5C277320D1DE640077381D /* Helper */ = {
+		AF5C277320D1DE640077381D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				AF1444A620CCBC59005FDFAD /* DynamicValue.swift */,
 				AFD3A81B20D1580C0094EF7E /* ActivityIndicator.swift */,
 				AF07CC5520CCFD2600E9AD75 /* Wireframe.swift */,
 			);
-			path = Helper;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		AF8B94D220F895B90015D3D9 /* Resources */ = {
@@ -325,16 +343,13 @@
 			children = (
 				AF000B2820D12BEB00951849 /* AppDelegate */,
 				AFCD149420CA654100137456 /* Model */,
-				AFCD149320CA654100137456 /* Controller */,
-				AFCD149020CA654000137456 /* View */,
 				AFCD149520CA654100137456 /* ViewModels */,
+				AFCD149320CA654100137456 /* ViewController */,
+				AFCD149020CA654000137456 /* View */,
 				AF000B2A20D12C0C00951849 /* Storyboard */,
-				AF14B2FB20CB678100C2A62A /* Service */,
-				AF14B31320CB838000C2A62A /* Router */,
-				AF5C277320D1DE640077381D /* Helper */,
-				AF14B30520CB68E200C2A62A /* Utils */,
-				AFCD149120CA654000137456 /* Extension */,
-				AF07CC4E20CCFA7900E9AD75 /* Constants */,
+				AF14B2FB20CB678100C2A62A /* Networking */,
+				AF14B31320CB838000C2A62A /* APIWrappers */,
+				AF14B30520CB68E200C2A62A /* Utility */,
 				AF8B94D220F895B90015D3D9 /* Resources */,
 				AFCD146620CA5F6A00137456 /* Info.plist */,
 				AFCD145E20CA5F6A00137456 /* StarWarsCharacters.xcdatamodeld */,
@@ -370,25 +385,18 @@
 		AFCD149020CA654000137456 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				042CAC93235DAD23000B09D7 /* CustomViews */,
 				AF1444AE20CCC85F005FDFAD /* PersonCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		AFCD149120CA654000137456 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				AF07CC5120CCFABE00E9AD75 /* UIColor.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		AFCD149320CA654100137456 /* Controller */ = {
+		AFCD149320CA654100137456 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				AF1444A420CCBB55005FDFAD /* PersonViewController.swift */,
 			);
-			path = Controller;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		AFCD149420CA654100137456 /* Model */ = {
@@ -396,6 +404,7 @@
 			children = (
 				AF14B31620CB84B500C2A62A /* CharactersModel.swift */,
 				AF14B31B20CB982F00C2A62A /* PersonModel.swift */,
+				042CAC90235DAB8F000B09D7 /* GenderModel.swift */,
 				AFECBB5420D10E8D00D261BF /* EyeColorModel.swift */,
 			);
 			path = Model;
@@ -438,6 +447,7 @@
 				AFCD145020CA5F6A00137456 /* Sources */,
 				AFCD145120CA5F6A00137456 /* Frameworks */,
 				AFCD145220CA5F6A00137456 /* Resources */,
+				042CAC92235DACD6000B09D7 /* Run Swiftlint Script */,
 			);
 			buildRules = (
 			);
@@ -566,6 +576,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		042CAC92235DACD6000B09D7 /* Run Swiftlint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swiftlint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		6DD63DD080BD17A36371D1F6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -645,6 +673,7 @@
 				AF14B30820CB691900C2A62A /* Reachability.swift in Sources */,
 				AFD3A81C20D1580C0094EF7E /* ActivityIndicator.swift in Sources */,
 				AF14B30220CB67C900C2A62A /* ErrorResult.swift in Sources */,
+				042CAC91235DAB8F000B09D7 /* GenderModel.swift in Sources */,
 				AF1444AF20CCC85F005FDFAD /* PersonCell.swift in Sources */,
 				AF14B30420CB681A00C2A62A /* ParserHelper.swift in Sources */,
 				AF1444AA20CCC589005FDFAD /* PersonViewModel.swift in Sources */,
@@ -657,8 +686,10 @@
 				AF14B30020CB67B400C2A62A /* Result.swift in Sources */,
 				AF14B31720CB84B500C2A62A /* CharactersModel.swift in Sources */,
 				AFCD145820CA5F6A00137456 /* AppDelegate.swift in Sources */,
+				042CAC95235DAD32000B09D7 /* ReusableView.swift in Sources */,
+				042CAC98235DAD7A000B09D7 /* UITableView+Extensions.swift in Sources */,
 				AF14B31E20CBA0E100C2A62A /* Utility.swift in Sources */,
-				AF07CC5020CCFAA000E9AD75 /* ThemeColor.swift in Sources */,
+				AF07CC5020CCFAA000E9AD75 /* ColourConstant.swift in Sources */,
 				AF14B31C20CB982F00C2A62A /* PersonModel.swift in Sources */,
 				AF07CC5620CCFD2600E9AD75 /* Wireframe.swift in Sources */,
 				AFA94CF820CFE5BE0041B97E /* Array.swift in Sources */,

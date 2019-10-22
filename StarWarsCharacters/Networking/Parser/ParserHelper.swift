@@ -18,10 +18,8 @@ final class ParserHelper {
         switch T.parseObject(data: data) {
         case .failure(let error):
             completion(.failure(error))
-            break
         case .success(let newModel):
             completion(.success([newModel]))
-            break
         }
     }
 
@@ -29,10 +27,8 @@ final class ParserHelper {
         switch T.parseObject(data: data) {
         case .failure(let error):
             completion(.failure(error))
-            break
         case .success(let newModel):
             completion(.success(newModel))
-            break
         }
     }
 }

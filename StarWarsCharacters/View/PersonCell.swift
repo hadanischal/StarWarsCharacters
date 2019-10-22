@@ -18,7 +18,7 @@ class PersonCell: UITableViewCell {
                 return
             }
             titleLabel?.text =  data.name
-            subtitleLabel?.text =  "Eye Color : " + data.eyeColor!.capitalized
+            subtitleLabel?.text =  "Eye Color : " + data.eyeColor.capitalized
         }
     }
     override func awakeFromNib() {

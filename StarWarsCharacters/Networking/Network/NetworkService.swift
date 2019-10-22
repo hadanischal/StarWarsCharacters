@@ -9,12 +9,18 @@
 import Foundation
 
 final class NetworkService {
-    func loadData(url: URL, session: URLSession = URLSession(configuration: .default), completion: @escaping (Result<Data, ErrorResult>) -> Void) -> URLSessionTask? {
+    private var session: URLSession!
+
+    init(_ session: URLSession = URLSession(configuration: .default)) {
+        self.session = session
+    }
+
+    func loadData(url: URL, completion: @escaping (Result<Data, ErrorResult>) -> Void) -> URLSessionTask? {
         var request = NetworkMethod.request(method: .GET, url: url)
         if let reachability = Reachability(), !reachability.isReachable {
             request.cachePolicy = .returnCacheDataDontLoad
         }
-        let task = session.dataTask(with: request) { (data, _, error) in
+        let task = self.session.dataTask(with: request) { (data, _, error) in
             if let error = error {
                 completion(.failure(.network(string: "An error occured during request :" + error.localizedDescription)))
                 return
