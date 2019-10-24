@@ -8,8 +8,13 @@
 
 import Foundation
 
-final class NetworkService {
+protocol NetworkingDataSource: class {
+    func loadData(url: URL, completion: @escaping (Result<Data, ErrorResult>) -> Void) -> URLSessionTask?
+}
+
+final class NetworkService: NetworkingDataSource {
     private var session: URLSession!
+    private var reachability: Reachability?
 
     init(_ session: URLSession = URLSession(configuration: .default)) {
         self.session = session
@@ -17,7 +22,8 @@ final class NetworkService {
 
     func loadData(url: URL, completion: @escaping (Result<Data, ErrorResult>) -> Void) -> URLSessionTask? {
         var request = NetworkMethod.request(method: .GET, url: url)
-        if let reachability = Reachability(), !reachability.isReachable {
+        if let reachability =  try? Reachability(),
+        reachability.connection == .unavailable {
             request.cachePolicy = .returnCacheDataDontLoad
         }
         let task = self.session.dataTask(with: request) { (data, _, error) in

@@ -9,7 +9,7 @@
 import Foundation
 
 class NetworkHandler {
-    let reachability = Reachability()!
+
     func networkResult<T: Parceable>(completion: @escaping ((Result<[T], ErrorResult>) -> Void)) ->
         ((Result<Data, ErrorResult>) -> Void) {
             return { dataResult in

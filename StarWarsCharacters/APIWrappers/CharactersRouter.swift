@@ -13,14 +13,19 @@ protocol CharactersRouterProtocol: class {
 }
 
 final class CharactersRouter: NetworkHandler, CharactersRouterProtocol {
-    static let shared = CharactersRouter()
-    let endpoint = APIManager.allPersonsURL
-    var task: URLSessionTask?
+
+    private let endpoint = APIManager.allPersonsURL
+    private var task: URLSessionTask?
+    private var networking: NetworkingDataSource!
+
+    init(withNetworking networking: NetworkingDataSource = NetworkService()) {
+        self.networking = networking
+    }
 
     func fetchConverter(_ completion: @escaping ((Result<CharactersModel, ErrorResult>) -> Void)) {
         self.cancelFetchService()
         print(endpoint.absoluteString)
-        task = NetworkService().loadData(url: endpoint, completion: self.networkResult(completion: completion))
+        task = self.networking.loadData(url: endpoint, completion: self.networkResult(completion: completion))
     }
 
     func cancelFetchService() {
