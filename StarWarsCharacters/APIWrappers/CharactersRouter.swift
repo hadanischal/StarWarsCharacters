@@ -15,7 +15,7 @@ protocol CharactersRouterProtocol: class {
 final class CharactersRouter: NetworkHandler, CharactersRouterProtocol {
 
     private let endpoint = APIManager.allPersonsURL
-    private var task: URLSessionTask?
+    var task: URLSessionTask?
     private var networking: NetworkingDataSource!
 
     init(withNetworking networking: NetworkingDataSource = NetworkService()) {

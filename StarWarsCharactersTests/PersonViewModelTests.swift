@@ -12,19 +12,21 @@ import XCTest
 class PersonViewModelTests: XCTestCase {
     var viewModel: PersonViewModel!
     var dataSource: GenericDataSource<PersonModel>!
-    fileprivate var service: MockCharactersRouter!
+    fileprivate var mockService: MockCharactersRouter!
+    private var mockPersonHelper: MockPersonHelper!
 
     override func setUp() {
         super.setUp()
-        self.service = MockCharactersRouter()
+        self.mockService = MockCharactersRouter()
+        self.mockPersonHelper = MockPersonHelper()
         self.dataSource = GenericDataSource<PersonModel>()
-        self.viewModel = PersonViewModel(service: service, dataSource: dataSource)
+        self.viewModel = PersonViewModel(service: mockService, withPersonHelper: mockPersonHelper, dataSource: dataSource)
     }
 
     override func tearDown() {
         self.viewModel = nil
         self.dataSource = nil
-        self.service = nil
+        self.mockService = nil
         super.tearDown()
     }
 
@@ -34,7 +36,7 @@ class PersonViewModelTests: XCTestCase {
             XCTAssert(false, "ViewModel should not be able to fetch without CharactersModel")
             return
         }
-        service?.charactersData = result
+        mockService?.charactersData = result
         viewModel.fetchServiceCall { result in
             switch result {
             case .failure :
@@ -45,7 +47,7 @@ class PersonViewModelTests: XCTestCase {
     }
 
     func testFetchNoCharacters() {
-        service.charactersData = nil
+        mockService.charactersData = nil
         viewModel.fetchServiceCall { result in
             switch result {
             case .success :
@@ -53,6 +55,24 @@ class PersonViewModelTests: XCTestCase {
             default: break
             }
         }
+    }
+
+    func testFetchCharactersEyeList() {
+        let exp = expectation(description: "Loading service call")
+        self.mockService.charactersData = MockData.shared.getCharactersModel()
+        self.mockPersonHelper.eyeColorData = MockData.shared.getEyeColorModel()
+
+        viewModel.fetchServiceCall { result in
+            switch result {
+            case .failure :
+                XCTAssert(false, "ViewModel should not be able to fetch without service")
+            default:
+                exp.fulfill()
+                let filterValue = self.viewModel.filteredResults
+                XCTAssertEqual(filterValue, MockData.shared.getEyeColorModel())
+            }
+        }
+        waitForExpectations(timeout: 5)
     }
 
 }

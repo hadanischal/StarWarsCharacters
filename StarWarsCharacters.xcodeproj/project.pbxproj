@@ -19,6 +19,9 @@
 		043F9191235F15F500062D21 /* source-sans-pro.bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 043F918E235F15F500062D21 /* source-sans-pro.bold.ttf */; };
 		043F919A235F2EB100062D21 /* ImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F9199235F2EB100062D21 /* ImageView+Extension.swift */; };
 		043F919C235F321F00062D21 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F919B235F321F00062D21 /* NibLoadableView.swift */; };
+		046A3FF52363290200F95C07 /* PersonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A3FF42363290200F95C07 /* PersonHelper.swift */; };
+		046A3FF723632B4000F95C07 /* MockPersonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A3FF623632B4000F95C07 /* MockPersonHelper.swift */; };
+		048B4D182363BA9700A61A61 /* PersonHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B4D172363BA9700A61A61 /* PersonHelperTests.swift */; };
 		1217A4F105F6BEE5A372DCFF /* Pods_StarWarsCharactersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751EF17E5BA90329D974D8EF /* Pods_StarWarsCharactersUITests.framework */; };
 		1776FA3BF0A49F387B0EEEE9 /* Pods_StarWarsCharacters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383A3D9BD5EEC972812A044F /* Pods_StarWarsCharacters.framework */; };
 		6F7A43389315E24A7FA43903 /* Pods_StarWarsCharactersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC4F88C70D20FD7234D092DF /* Pods_StarWarsCharactersTests.framework */; };
@@ -95,6 +98,9 @@
 		043F918E235F15F500062D21 /* source-sans-pro.bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "source-sans-pro.bold.ttf"; sourceTree = "<group>"; };
 		043F9199235F2EB100062D21 /* ImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Extension.swift"; sourceTree = "<group>"; };
 		043F919B235F321F00062D21 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		046A3FF42363290200F95C07 /* PersonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonHelper.swift; sourceTree = "<group>"; };
+		046A3FF623632B4000F95C07 /* MockPersonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPersonHelper.swift; sourceTree = "<group>"; };
+		048B4D172363BA9700A61A61 /* PersonHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonHelperTests.swift; sourceTree = "<group>"; };
 		383A3D9BD5EEC972812A044F /* Pods_StarWarsCharacters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWarsCharacters.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CECE94B8BDAB5030AB2F130 /* Pods-StarWarsCharactersUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsCharactersUITests.debug.xcconfig"; path = "Target Support Files/Pods-StarWarsCharactersUITests/Pods-StarWarsCharactersUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E1AD7816D921A5300308927 /* Pods-StarWarsCharactersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsCharactersUITests.release.xcconfig"; path = "Target Support Files/Pods-StarWarsCharactersUITests/Pods-StarWarsCharactersUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -418,6 +424,7 @@
 				AF4347ED20D0F39E00C12EAB /* CharactersRouterTests.swift */,
 				AF4347EF20D0F3B400C12EAB /* CharactersModelTests.swift */,
 				AFCD146F20CA5F6A00137456 /* StarWarsCharactersTests.swift */,
+				048B4D172363BA9700A61A61 /* PersonHelperTests.swift */,
 				AF4347F120D0F3D000C12EAB /* PersonViewControllerTests.swift */,
 				AFCD147120CA5F6A00137456 /* Info.plist */,
 			);
@@ -466,6 +473,7 @@
 			children = (
 				AF1444A920CCC589005FDFAD /* PersonViewModel.swift */,
 				AF1444AC20CCC715005FDFAD /* PersonDataSource.swift */,
+				046A3FF42363290200F95C07 /* PersonHelper.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -475,6 +483,7 @@
 			children = (
 				AFF9EE8522D9FCFD00BEA7F0 /* MockCharactersRouter.swift */,
 				AFF9EE8722D9FDA200BEA7F0 /* MockData.swift */,
+				046A3FF623632B4000F95C07 /* MockPersonHelper.swift */,
 			);
 			path = MockClass;
 			sourceTree = "<group>";
@@ -780,6 +789,7 @@
 				043F919C235F321F00062D21 /* NibLoadableView.swift in Sources */,
 				AF14B31A20CB920F00C2A62A /* APIManager.swift in Sources */,
 				AFCD146020CA5F6A00137456 /* StarWarsCharacters.xcdatamodeld in Sources */,
+				046A3FF52363290200F95C07 /* PersonHelper.swift in Sources */,
 				AF14B30A20CB694600C2A62A /* ReachabilityError.swift in Sources */,
 				AF14B30020CB67B400C2A62A /* Result.swift in Sources */,
 				AF14B31720CB84B500C2A62A /* CharactersModel.swift in Sources */,
@@ -804,8 +814,10 @@
 			files = (
 				AFCD147020CA5F6A00137456 /* StarWarsCharactersTests.swift in Sources */,
 				AF4347F220D0F3D000C12EAB /* PersonViewControllerTests.swift in Sources */,
+				048B4D182363BA9700A61A61 /* PersonHelperTests.swift in Sources */,
 				AF4347EC20D0F34900C12EAB /* PersonDataSourceTests.swift in Sources */,
 				AFF9EE8622D9FCFD00BEA7F0 /* MockCharactersRouter.swift in Sources */,
+				046A3FF723632B4000F95C07 /* MockPersonHelper.swift in Sources */,
 				AF4347F020D0F3B400C12EAB /* CharactersModelTests.swift in Sources */,
 				AFF9EE8822D9FDA200BEA7F0 /* MockData.swift in Sources */,
 				AF4347EE20D0F39E00C12EAB /* CharactersRouterTests.swift in Sources */,
