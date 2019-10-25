@@ -57,4 +57,7 @@ extension UIFont {
     static var statusTitle: UIFont {
         return .boldFont(size: 16)
     }
+    static var imageTitle: UIFont {
+           return .boldFont(size: 40)
+       }
 }

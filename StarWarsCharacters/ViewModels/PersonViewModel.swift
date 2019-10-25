@@ -12,27 +12,27 @@ protocol PersonViewModelProtocol {
     var onErrorHandling: ((ErrorResult?) -> Void)? { get set }
     func didSelectSegment(_ segmentIndex: Int)
     func fetchServiceCall(_ completion: ((Result<Bool, ErrorResult>) -> Void)?)
-    var onFilteredResults: ((EyeColorModel?) -> Void)? { get set }
+    var filteredResults: [EyeColorModel] { get }
 }
 
 final class PersonViewModel: PersonViewModelProtocol {
     // MARK: - Input
-    weak var dataSource: GenericDataSource<PersonModel>?
-    var filteredResults: EyeColorModel
+    private var service: CharactersRouterProtocol!
+    private weak var dataSource: GenericDataSource<PersonModel>?
 
     // MARK: - Output
-    weak var service: CharactersRouterProtocol?
+    var filteredResults: [EyeColorModel] = []
     var onErrorHandling: ((ErrorResult?) -> Void)?
     var onFilteredResults: ((EyeColorModel?) -> Void)?
 
-    init(service: CharactersRouterProtocol? = CharactersRouter.shared, dataSource: GenericDataSource<PersonModel>?) {
-        self.dataSource = dataSource
-        self.filteredResults =  EyeColorModel(eyeColorArray: [], filteredResults: [:])
+    init(service: CharactersRouterProtocol = CharactersRouter(),
+         dataSource: GenericDataSource<PersonModel>?) {
         self.service = service
+        self.dataSource = dataSource
     }
 
     func fetchServiceCall(_ completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
-        guard let service = service else {
+        guard let service = self.service else {
             onErrorHandling?(ErrorResult.custom(string: "Missing service"))
             return
         }
@@ -43,7 +43,6 @@ final class PersonViewModel: PersonViewModelProtocol {
                     if let results = converter.results {
                         self.dataSource?.data.value = results
                         self.filteredResults = EyeColorModel.parseEyeColorArray(results: results)
-                        self.onFilteredResults?(self.filteredResults)
                         completion?(Result.success(true))
                     } else {
                         self.onErrorHandling?(ErrorResult.parser(string: "unable to parse"))
@@ -58,9 +57,6 @@ final class PersonViewModel: PersonViewModelProtocol {
     }
 
     func didSelectSegment(_ segmentIndex: Int) {
-        let eyeColorArray: [String] = self.filteredResults.eyeColorArray
-        let filteredResults: [String: [PersonModel]] = self.filteredResults.filteredResults
-        let eyeColor = eyeColorArray[segmentIndex]
-        self.dataSource?.data.value = filteredResults[eyeColor]!
+        self.dataSource?.data.value = filteredResults[segmentIndex].results ?? []
     }
 }

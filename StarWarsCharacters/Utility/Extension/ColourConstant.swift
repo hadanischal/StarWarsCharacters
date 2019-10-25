@@ -73,5 +73,7 @@ extension UIColor {
     static var segmentBadge: UIColor {
         return UIColor(rgb: 0xf46f60)
     }
-
+    static var imageBackgroundColor: UIColor {
+        return UIColor(rgb: 0xf46f60)
+    }
 }
