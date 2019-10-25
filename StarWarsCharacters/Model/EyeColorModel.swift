@@ -8,20 +8,16 @@
 
 import Foundation
 
-struct EyeColorModel {
+struct EyeColorModel: Equatable {
     let eyeColor: String
     let count: Int
     let results: [PersonModel]?
 }
 
 extension EyeColorModel {
-    static func parseEyeColorArray(results: [PersonModel]) -> [EyeColorModel] {
-        var value = Dictionary(grouping: results) { (element: PersonModel) in
-            return element.eyeColor
-        }
-        value.updateValue(results, forKey: "All")
-        let sorted = value.sorted {$0.key < $1.key}
-
-        return sorted.compactMap { return EyeColorModel(eyeColor: $0.key, count: $0.value.count, results: $0.value)}
+    static func == (lhs: EyeColorModel, rhs: EyeColorModel) -> Bool {
+        return lhs.eyeColor == rhs.eyeColor
+            && lhs.count == rhs.count
+            && lhs.results == rhs.results
     }
 }

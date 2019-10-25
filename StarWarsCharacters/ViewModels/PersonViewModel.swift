@@ -17,8 +17,9 @@ protocol PersonViewModelProtocol {
 
 final class PersonViewModel: PersonViewModelProtocol {
     // MARK: - Input
-    private var service: CharactersRouterProtocol!
+    private var service: CharactersRouterProtocol?
     private weak var dataSource: GenericDataSource<PersonModel>?
+    private var personHelper: PersonHelperDataSource
 
     // MARK: - Output
     var filteredResults: [EyeColorModel] = []
@@ -26,8 +27,10 @@ final class PersonViewModel: PersonViewModelProtocol {
     var onFilteredResults: ((EyeColorModel?) -> Void)?
 
     init(service: CharactersRouterProtocol = CharactersRouter(),
+         withPersonHelper personHelper: PersonHelperDataSource = PersonHelper(),
          dataSource: GenericDataSource<PersonModel>?) {
         self.service = service
+        self.personHelper = personHelper
         self.dataSource = dataSource
     }
 
@@ -36,20 +39,20 @@ final class PersonViewModel: PersonViewModelProtocol {
             onErrorHandling?(ErrorResult.custom(string: "Missing service"))
             return
         }
-        service.fetchConverter { result in
+        service.fetchConverter { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let converter) :
                     if let results = converter.results {
-                        self.dataSource?.data.value = results
-                        self.filteredResults = EyeColorModel.parseEyeColorArray(results: results)
+                        self?.dataSource?.data.value = results
+                        self?.filteredResults = self?.personHelper.parseEyeColorArray(results: results) ?? []
                         completion?(Result.success(true))
                     } else {
-                        self.onErrorHandling?(ErrorResult.parser(string: "unable to parse"))
+                        self?.onErrorHandling?(ErrorResult.parser(string: "unable to parse"))
                         completion?(Result.failure(ErrorResult.parser(string: "unable to parse")))
                     }
                 case .failure(let error) :
-                    self.onErrorHandling?(error)
+                    self?.onErrorHandling?(error)
                     completion?(Result.failure(error))
                 }
             }
