@@ -24,7 +24,7 @@ class PersonDataSource: GenericDataSource<PersonModel>, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as PersonCell
+        let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as PeopleTableViewCell
         let data = self.data.value[indexPath.row]
         cell.personModel = data
         return cell

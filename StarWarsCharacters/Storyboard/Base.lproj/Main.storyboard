@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xqu-Gq-S5I">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xqu-Gq-S5I">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,22 +13,29 @@
             <objects>
                 <viewController storyboardIdentifier="PersonViewController" id="BYZ-38-t0r" customClass="PersonViewController" customModule="StarWarsCharacters" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8B-af-sr4" customClass="Segmentio" customModule="Segmentio">
+                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ena-yg-skY"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EcC-gu-2uc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="138" width="414" height="724"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonCell" rowHeight="54" id="NQm-br-46s" customClass="PersonCell" customModule="StarWarsCharacters" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="54"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NQm-br-46s" id="0MP-XA-16F">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beD-3F-Ad8">
-                                                    <rect key="frame" x="23" y="6.5" width="329" height="20.5"/>
+                                                    <rect key="frame" x="28" y="6.6666666666666679" width="358" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="fd3-Lb-CTc"/>
                                                     </constraints>
@@ -40,7 +44,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTZ-5U-jX3">
-                                                    <rect key="frame" x="23" y="27" width="329" height="14.5"/>
+                                                    <rect key="frame" x="28" y="27.666666666666668" width="358" height="14.333333333333332"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14.5" id="Q4O-g2-Y8R"/>
                                                     </constraints>
@@ -72,20 +76,24 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="EcC-gu-2uc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Fn2-nk-PLd"/>
+                            <constraint firstItem="f8B-af-sr4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IdE-ZT-hM2"/>
                             <constraint firstItem="EcC-gu-2uc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Sn3-VR-GP6"/>
                             <constraint firstItem="EcC-gu-2uc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="WE4-T9-nVw"/>
-                            <constraint firstItem="EcC-gu-2uc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="YFy-d3-cIy"/>
+                            <constraint firstItem="EcC-gu-2uc" firstAttribute="top" secondItem="f8B-af-sr4" secondAttribute="bottom" id="c5E-yC-fDK"/>
+                            <constraint firstItem="f8B-af-sr4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lgn-aa-jXa"/>
+                            <constraint firstItem="f8B-af-sr4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tV0-ta-Pkb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="QVV-VT-tlr"/>
                     <connections>
+                        <outlet property="segmentioView" destination="f8B-af-sr4" id="PEj-Ny-PzU"/>
                         <outlet property="tableView" destination="EcC-gu-2uc" id="r95-W4-0Oy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="479.19999999999999" y="105.69715142428787"/>
+            <point key="canvasLocation" x="478.26086956521743" y="105.13392857142857"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uUM-F2-8pC">
@@ -93,7 +101,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xqu-Gq-S5I" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pMj-UE-CLK">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

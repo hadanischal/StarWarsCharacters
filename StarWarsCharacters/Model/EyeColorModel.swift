@@ -5,26 +5,23 @@
 //  Created by Nischal Hada on 6/13/18.
 //  Copyright © 2018 NischalHada. All rights reserved.
 //
-//swiftlint:disable all
+
 import Foundation
 
 struct EyeColorModel {
-    let eyeColorArray: [String]
-    let filteredResults: [String: [PersonModel]]
+    let eyeColor: String
+    let count: Int
+    let results: [PersonModel]?
 }
-//TODO:- Rethink this logic
+
 extension EyeColorModel {
-    static func parseEyeColorArray(results: [PersonModel]) -> EyeColorModel {
-        var filteredResults = [String: [PersonModel]]()
-        let mapEyeColor = results.map { $0.eyeColor } as! [String]
-        var eyeColorArray = mapEyeColor.removingDuplicates()
-        for eyeColor in eyeColorArray {
-            let foundItems = results.filter { $0.eyeColor == eyeColor }
-            filteredResults[eyeColor] = foundItems
+    static func parseEyeColorArray(results: [PersonModel]) -> [EyeColorModel] {
+        var value = Dictionary(grouping: results) { (element: PersonModel) in
+            return element.eyeColor
         }
-        eyeColorArray.insert("all", at: 0)
-        filteredResults["all"] = results
-        let conversion = EyeColorModel(eyeColorArray: eyeColorArray, filteredResults: filteredResults)
-        return conversion
+        value.updateValue(results, forKey: "All")
+        let sorted = value.sorted {$0.key < $1.key}
+
+        return sorted.compactMap { return EyeColorModel(eyeColor: $0.key, count: $0.value.count, results: $0.value)}
     }
 }

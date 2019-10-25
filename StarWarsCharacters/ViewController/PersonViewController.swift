@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import Segmentio
 
 class PersonViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    var segmentedController: UISegmentedControl!
+    @IBOutlet weak var segmentioView: Segmentio!
 
-    fileprivate let segmentedInsets = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 5.0, right: 10.0)
     fileprivate var activityIndicator: ActivityIndicator! = ActivityIndicator()
     private let refreshControl = UIRefreshControl()
     let dataSource = PersonDataSource()
@@ -23,86 +23,86 @@ class PersonViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupUI()
-        self.setupUIRefreshControl()
-        self.setupViewModel()
-        self.activityIndicator.start()
-        self.viewModel.fetchServiceCall { _ in
-            self.activityIndicator.stop()
-        }
+        setupUI()
+        configureTableView()
+        setupUIRefreshControl()
+        setupViewModel()
+        activityIndicator.start()
     }
 
-    func setupUI() {
-        self.title = "Star Wars characters"
-        self.tableView.backgroundColor = ThemeColor.white
-        self.view.backgroundColor = ThemeColor.white
-        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+    private func setupUI() {
+        title = "Star Wars characters"
+        tableView.backgroundColor = .white
+        view.backgroundColor = .white
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        segmentioView.isHidden = true
     }
 
-    func setupUIRefreshControl() {
-        if #available(iOS 10.0, *) {
-            tableView.refreshControl = refreshControl
-        } else {
-            tableView.addSubview(refreshControl)
-        }
+    private func setupUIRefreshControl() {
+        tableView.addSubview(refreshControl)
         refreshControl.addTarget(self, action: #selector(refreshPeopleData), for: .valueChanged)
     }
 
-    func setupViewModel() {
-        self.tableView.dataSource = self.dataSource
-        self.dataSource.data.addAndNotify(observer: self) { [weak self] _ in
+    private func setupViewModel() {
+        tableView.dataSource = self.dataSource
+
+        dataSource.data.addAndNotify(observer: self) { [weak self] _ in
             self?.tableView.reloadData()
         }
-        self.viewModel.onErrorHandling = { [weak self] error in
+        viewModel.onErrorHandling = { [weak self] error in
+            self?.activityIndicator.stop()
             DefaultWireframe().presentAlert(self!, title: "An error occured", message: "Oops, something went wrong!")
         }
 
-        self.viewModel.onFilteredResults = { [weak self] result in
-            self?.setupUISegmentedControl(result: result!)
+        viewModel.fetchServiceCall { [weak self] _ in
+            self?.activityIndicator.stop()
+            self?.setupSegmentioView()
         }
-    }
-
-    func setupUISegmentedControl(result: EyeColorModel) {
-        let filteredResults: [String: [PersonModel]] = result.filteredResults
-        var items = [String]()
-        for eyeColor in result.eyeColorArray {
-            let person = filteredResults[eyeColor]
-            let value = eyeColor.capitalized + "(" + "\(person?.count ?? 0)" + ")"
-            items.append(value)
-        }
-        segmentedController = UISegmentedControl(items: items)
-        let paddingSpace = segmentedInsets.left * 2
-        let availableWidth = view.frame.width - paddingSpace
-        segmentedController.frame =  CGRect(x: segmentedInsets.left, y: segmentedInsets.top, width: availableWidth, height: segmentedController.frame.height)
-        segmentedController.addTarget(self, action: #selector(didSelectSegment), for: .valueChanged)
-        segmentedController.selectedSegmentIndex = 0
-        navigationItem.titleView = segmentedController
-        viewModel.didSelectSegment(0)
-    }
-
-    @IBAction func didSelectSegment(_ sender: Any) {
-        let segmentIndex = segmentedController.selectedSegmentIndex
-        viewModel.didSelectSegment(segmentIndex)
     }
 
     @objc private func refreshPeopleData(_ sender: Any) {
-        self.activityIndicator.start()
-        self.viewModel.fetchServiceCall { _ in
+        activityIndicator.start()
+        viewModel.fetchServiceCall { _ in
             self.activityIndicator.stop()
         }
-        self.refreshControl.endRefreshing()
+        refreshControl.endRefreshing()
     }
 }
 
-// MARK: - TableViewDelegate Setup
-extension PersonViewController: UITableViewDelegate {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+extension PersonViewController {
+    private func setupSegmentioView() {
+        segmentioView.isHidden = false
+
+        let segmentioContent = viewModel.filteredResults.flatMap { result -> [SegmentioItem] in
+            return [SegmentioItem(title: result.eyeColor.capitalized, image: nil)]
+        }
+        SegmentioBuilder.buildSegmentioView(
+            segmentioView: segmentioView,
+            segmentioStyle: .onlyLabel,
+            segmentioContent: segmentioContent
+        )
+
+        viewModel.filteredResults.enumerated().forEach { result in
+            SegmentioBuilder.setupBadgeCountForIndex(segmentioView, index: result.offset, count: result.element.count)
+        }
+
+        segmentioView.selectedSegmentioIndex = 0
+
+        segmentioView.valueDidChange = { [weak self] _, segmentIndex in
+            print("Selected item: \(segmentIndex)")
+            self?.viewModel.didSelectSegment(segmentIndex)
+        }
     }
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+
+}
+
+// MARK: - TableView Setup
+
+fileprivate extension PersonViewController {
+
+    func configureTableView() {
+        tableView.register(PeopleTableViewCell.self)
+        tableView.estimatedRowHeight = 83
+        tableView.rowHeight = UITableView.automaticDimension
     }
 }

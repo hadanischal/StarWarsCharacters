@@ -10,6 +10,8 @@
 		042CAC91235DAB8F000B09D7 /* GenderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042CAC90235DAB8F000B09D7 /* GenderModel.swift */; };
 		042CAC95235DAD32000B09D7 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042CAC94235DAD32000B09D7 /* ReusableView.swift */; };
 		042CAC98235DAD7A000B09D7 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042CAC97235DAD7A000B09D7 /* UITableView+Extensions.swift */; };
+		0437E2BD235FC3CE00982902 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0437E2BB235FC3CE00982902 /* PeopleTableViewCell.swift */; };
+		0437E2BE235FC3CE00982902 /* PeopleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0437E2BC235FC3CE00982902 /* PeopleTableViewCell.xib */; };
 		043F9188235F13AC00062D21 /* SegmentioBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F9187235F13AC00062D21 /* SegmentioBuilder.swift */; };
 		043F918A235F15A500062D21 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F9189235F15A500062D21 /* FontExtension.swift */; };
 		043F918F235F15F500062D21 /* source-sans-pro.regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 043F918C235F15F500062D21 /* source-sans-pro.regular.ttf */; };
@@ -84,6 +86,8 @@
 		042CAC90235DAB8F000B09D7 /* GenderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderModel.swift; sourceTree = "<group>"; };
 		042CAC94235DAD32000B09D7 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		042CAC97235DAD7A000B09D7 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		0437E2BB235FC3CE00982902 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
+		0437E2BC235FC3CE00982902 /* PeopleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleTableViewCell.xib; sourceTree = "<group>"; };
 		043F9187235F13AC00062D21 /* SegmentioBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentioBuilder.swift; sourceTree = "<group>"; };
 		043F9189235F15A500062D21 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		043F918C235F15F500062D21 /* source-sans-pro.regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "source-sans-pro.regular.ttf"; sourceTree = "<group>"; };
@@ -219,6 +223,8 @@
 		043F9194235F2C2100062D21 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				0437E2BB235FC3CE00982902 /* PeopleTableViewCell.swift */,
+				0437E2BC235FC3CE00982902 /* PeopleTableViewCell.xib */,
 				AF1444AE20CCC85F005FDFAD /* PersonCell.swift */,
 			);
 			path = TableViewCell;
@@ -531,6 +537,7 @@
 				AFCD147220CA5F6A00137456 /* Sources */,
 				AFCD147320CA5F6A00137456 /* Frameworks */,
 				AFCD147420CA5F6A00137456 /* Resources */,
+				0422866F23619646003B8DFB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -598,6 +605,7 @@
 			files = (
 				AFF9EE8322D97F1D00BEA7F0 /* .swiftlint.yml in Resources */,
 				AFCD148D20CA625100137456 /* .gitignore in Resources */,
+				0437E2BE235FC3CE00982902 /* PeopleTableViewCell.xib in Resources */,
 				043F918F235F15F500062D21 /* source-sans-pro.regular.ttf in Resources */,
 				AFCD146520CA5F6A00137456 /* LaunchScreen.storyboard in Resources */,
 				043F9191235F15F500062D21 /* source-sans-pro.bold.ttf in Resources */,
@@ -625,6 +633,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0422866F23619646003B8DFB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StarWarsCharacters/Pods-StarWarsCharacters-frameworks.sh\"\n\n";
+		};
 		042CAC92235DACD6000B09D7 /* Run Swiftlint Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -768,6 +793,7 @@
 				AFA94CF820CFE5BE0041B97E /* Array.swift in Sources */,
 				AF14B31520CB83DF00C2A62A /* CharactersRouter.swift in Sources */,
 				AF14B30E20CB6B3B00C2A62A /* NetworkMethod.swift in Sources */,
+				0437E2BD235FC3CE00982902 /* PeopleTableViewCell.swift in Sources */,
 				AF1444AD20CCC716005FDFAD /* PersonDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
