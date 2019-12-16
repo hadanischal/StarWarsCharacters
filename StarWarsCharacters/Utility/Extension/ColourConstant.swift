@@ -1,5 +1,5 @@
 //
-//  ThemeColor.swift
+//  ColourConstant.swift
 //  StarWarsCharacters
 //
 //  Created by Nischal Hada on 6/10/18.
@@ -10,7 +10,7 @@ import UIKit
 
 extension UIColor {
     static var primary: UIColor {
-        return UIColor(red: 0.122, green: 0.737, blue: 0.824, alpha: 1.00)
+        return UIColor(rgb: 0xEf8136)
     }
 
     static var primaryLight: UIColor {
@@ -68,7 +68,7 @@ extension UIColor {
         return UIColor(rgb: 0xEf8136)
     }
     static var segmentSeparator: UIColor {
-        return UIColor(rgb: 0xDDDDDD)
+        return ColorName.lightSilver.color
     }
     static var segmentBadge: UIColor {
         return UIColor(rgb: 0xf46f60)

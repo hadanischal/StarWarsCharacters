@@ -13,7 +13,7 @@ class GenericDataSource<T>: NSObject {
     var data: DynamicValue<[T]> = DynamicValue([])
 }
 
-class PersonDataSource: GenericDataSource<PersonModel>, UITableViewDataSource {
+final class PersonDataSource: GenericDataSource<PersonModel>, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

@@ -14,7 +14,6 @@ protocol NetworkingDataSource: class {
 
 final class NetworkService: NetworkingDataSource {
     private var session: URLSession!
-    private var reachability: Reachability?
 
     init(_ session: URLSession = URLSession(configuration: .default)) {
         self.session = session
