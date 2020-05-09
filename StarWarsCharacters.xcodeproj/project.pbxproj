@@ -53,6 +53,8 @@
 		AF4347F020D0F3B400C12EAB /* CharactersModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4347EF20D0F3B400C12EAB /* CharactersModelTests.swift */; };
 		AF4347F220D0F3D000C12EAB /* PersonViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4347F120D0F3D000C12EAB /* PersonViewControllerTests.swift */; };
 		AF4347F420D0F3FF00C12EAB /* Person.json in Resources */ = {isa = PBXBuildFile; fileRef = AF4347F320D0F3FF00C12EAB /* Person.json */; };
+		AF82A1D724663C6300D25AF0 /* swift.yml in Resources */ = {isa = PBXBuildFile; fileRef = AF82A1D624663C6300D25AF0 /* swift.yml */; };
+		AF82A1DC24664ACD00D25AF0 /* codecov.yml in Resources */ = {isa = PBXBuildFile; fileRef = AF82A1DB24664ACD00D25AF0 /* codecov.yml */; };
 		AFCD145820CA5F6A00137456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD145720CA5F6A00137456 /* AppDelegate.swift */; };
 		AFCD145D20CA5F6A00137456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFCD145B20CA5F6A00137456 /* Main.storyboard */; };
 		AFCD146020CA5F6A00137456 /* StarWarsCharacters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFCD145E20CA5F6A00137456 /* StarWarsCharacters.xcdatamodeld */; };
@@ -133,6 +135,8 @@
 		AF4347EF20D0F3B400C12EAB /* CharactersModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersModelTests.swift; sourceTree = "<group>"; };
 		AF4347F120D0F3D000C12EAB /* PersonViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewControllerTests.swift; sourceTree = "<group>"; };
 		AF4347F320D0F3FF00C12EAB /* Person.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Person.json; sourceTree = "<group>"; };
+		AF82A1D624663C6300D25AF0 /* swift.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swift.yml; sourceTree = "<group>"; };
+		AF82A1DB24664ACD00D25AF0 /* codecov.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = codecov.yml; sourceTree = "<group>"; };
 		AFCD145420CA5F6A00137456 /* StarWarsCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCD145720CA5F6A00137456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFCD145C20CA5F6A00137456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -386,6 +390,22 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		AF82A1D424663C6300D25AF0 /* .github */ = {
+			isa = PBXGroup;
+			children = (
+				AF82A1D524663C6300D25AF0 /* workflows */,
+			);
+			path = .github;
+			sourceTree = "<group>";
+		};
+		AF82A1D524663C6300D25AF0 /* workflows */ = {
+			isa = PBXGroup;
+			children = (
+				AF82A1D624663C6300D25AF0 /* swift.yml */,
+			);
+			path = workflows;
+			sourceTree = "<group>";
+		};
 		AF8B94D220F895B90015D3D9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,7 +418,9 @@
 		AFCD144B20CA5F6A00137456 = {
 			isa = PBXGroup;
 			children = (
+				AF82A1D424663C6300D25AF0 /* .github */,
 				AFF9EE8222D97F1D00BEA7F0 /* .swiftlint.yml */,
+				AF82A1DB24664ACD00D25AF0 /* codecov.yml */,
 				AFCD148C20CA625100137456 /* .gitignore */,
 				AFCD145620CA5F6A00137456 /* StarWarsCharacters */,
 				AFCD146E20CA5F6A00137456 /* StarWarsCharactersTests */,
@@ -638,8 +660,10 @@
 			files = (
 				AFF9EE8322D97F1D00BEA7F0 /* .swiftlint.yml in Resources */,
 				AFCD148D20CA625100137456 /* .gitignore in Resources */,
+				AF82A1DC24664ACD00D25AF0 /* codecov.yml in Resources */,
 				0437E2BE235FC3CE00982902 /* PeopleTableViewCell.xib in Resources */,
 				043F918F235F15F500062D21 /* source-sans-pro.regular.ttf in Resources */,
+				AF82A1D724663C6300D25AF0 /* swift.yml in Resources */,
 				AFCD146520CA5F6A00137456 /* LaunchScreen.storyboard in Resources */,
 				043F9191235F15F500062D21 /* source-sans-pro.bold.ttf in Resources */,
 				AFCD146220CA5F6A00137456 /* Assets.xcassets in Resources */,

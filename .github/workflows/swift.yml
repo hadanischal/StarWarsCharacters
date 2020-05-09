@@ -1,0 +1,30 @@
+name: Swift
+
+on:
+  push:
+    branches:
+      - master
+      - feature*
+      - bugfixe*
+      - hotfixe*
+      - techdebt*
+      - release*
+
+  pull_request:
+    branches:
+      - master
+      - development
+
+jobs:
+
+  XCODE:
+
+    runs-on: macOS-latest
+
+    steps:
+    - uses: actions/checkout@v2.1.0
+    - name: Checkout
+      run: pod install
+    - name: Build
+      run: xcodebuild -project "StarWarsCharacters.xcodeproj" -scheme "StarWarsCharacters" -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=13.4.1" -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test -enableCodeCoverage YES | xcpretty
+    - uses: codecov/codecov-action@v1

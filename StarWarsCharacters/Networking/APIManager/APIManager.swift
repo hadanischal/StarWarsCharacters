@@ -18,7 +18,7 @@ enum Method: String {
 }
 
 struct APIManager {
-    private static let baseURLString = "https://swapi.co/api/"
+    private static let baseURLString = "https://swapi.dev/api/" //"https://swapi.co/api/"
 
     static var allFilmsURL: URL {
         return SWAPIURL(method: .allFilms)

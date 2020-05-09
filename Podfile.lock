@@ -11,11 +11,10 @@ DEPENDENCIES:
   - SwiftLint
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - SwiftLint
   trunk:
     - Kingfisher
     - Segmentio
+    - SwiftLint
 
 SPEC CHECKSUMS:
   Kingfisher: b7e4cb65ff24c264bd2a1284b75b974d907afd94
@@ -24,4 +23,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: b227afce64453a33bf008d7c1797a9b95caf0d06
 
-COCOAPODS: 1.8.3
+COCOAPODS: 1.9.1
